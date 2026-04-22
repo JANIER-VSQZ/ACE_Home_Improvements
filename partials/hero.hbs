@@ -1,0 +1,27 @@
+<section class="hero">
+    <div class="hero-card">
+        <div class="contenido-visible">
+            <h2>Bienvenido a <span>ACE</span><span class="flecha"></span></h2>
+        </div>
+
+        <div class="contenido-expandible">
+            <p>Diseñamos y construimos tus ideas con calidad y responsabilidad.</p>
+            <div class="hero-buttons">
+                <a href="proyectosDestacados.html" class="btn">Ver Proyectos</a>
+                <a href="cotizaciones.html" class="btn btn-secundario">Solicitar Cotización</a>
+            </div>
+            <p>
+                Somos líderes en el desarrollo de proyectos residenciales, comerciales e industriales.
+                Contamos con más de 15 años de experiencia construyendo sueños con altos estándares de calidad.
+            </p>
+        </div>
+    </div>
+
+    <div class="hero-imagen">
+        {{#each heroData}}
+        {{>heroImagenes
+            imagen=imagen
+        }}
+        {{/each}}
+    </div>
+</section>

@@ -1,0 +1,352 @@
+@import "variables.less";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem @1;
+    background-color: @header-color-fondo;
+    .sombra-suave();
+
+    .encabezado {
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+
+            h1 {
+                margin-left: @1;
+                 font-family: "Trocchi", serif;
+                font-weight: 100;
+            }
+        }
+
+        .flex-alineado();
+
+        img {
+            .header-imagen(); //Siempre usar parentesis
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: @header-color-fuente;
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: @1;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+            //background-color: #2596be;
+            .header-enlaces-border();
+
+            a {
+                display: block;
+                .padding-enlace();
+                .header-enlaces-border();
+                text-decoration: none;
+                color: @header-color-fuente;
+                font-weight: 500;
+                transition: background-color 0.2s, color 0.2s;
+
+                &:hover {
+                    color: @header-color-fuente-hover;
+                    background-color: @header-color-fondo-hover;
+                }
+            }
+        }
+
+        .selected {
+            a {
+                color: @header-color-fuente-hover;
+            }
+
+            background-color: @header-color-fondo-hover;
+        }
+
+
+        .dropdown {
+            position: relative;
+
+            .dropdown-toggle {
+                background-color: @header-color-boton;
+                border: none;
+                .header-enlaces-border();
+                padding: 0.7rem @1;
+                font-size: @1;
+                font-weight: 500;
+                cursor: pointer;
+                color: @header-color-fuente;
+                transition: background-color 0.2s, color 0.2s;
+                width: 100%;
+                text-align: center;
+
+                &:hover {
+                    color: @header-color-fuente-hover;
+                    background-color: @header-color-fondo-hover;
+                }
+            }
+
+            .submenu {
+                display: none;
+                box-shadow: none;
+                list-style: none;
+                // padding: 0.5rem 0;
+                gap: @1;
+                // border-radius: 10px;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: auto;
+                transform: none;
+                z-index: 1000;
+                min-width: 180px;
+
+                .selected {
+                    // background-color: @header-color-fondo-hover;
+                    background-color: @header-color-fondo-hover;
+
+                    a {
+                        color: @header-color-fuente-hover;
+                    }
+                }
+
+                li {
+                    margin-bottom: 0.5rem;
+                    // background-color: #2596be;
+                    background-color: @header-color-fondo-boton;
+
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    a {
+                        display: block;
+                        .padding-enlace();
+                        text-decoration: none;
+                        color: @header-color-fuente;
+
+                        &:hover {
+                            // background-color: @header-color-fondo-hover;
+                            background-color: @header-color-fondo-hover;
+                            color: @header-color-fuente-hover;
+                        }
+                    }
+
+
+                }
+            }
+
+            &.open .submenu {
+                display: block;
+            }
+        }
+
+
+    }
+}
+
+.menu-toggle {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: @header-color-fuente;
+        cursor: pointer;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .dropdown .submenu {
+        margin-top: 0.5rem;
+    }
+}
+
+.dropdown .submenu {
+    left: auto;
+    right: 0;
+    min-width: 200px;
+    transform: translateX(0);
+}
+
+
+@media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .encabezado {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            gap: 0.5rem;
+            margin-top: @1;
+
+            &.open {
+                display: flex;
+            }
+
+            li:not(.dropdown) {
+                width: 100%;
+                border: 1px solid @header-color-fondo-hover;
+                .header-enlaces-border();
+                overflow: hidden;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    .header-enlaces-border();
+                }
+            }
+        }
+    }
+
+
+}
+
+
+footer {
+    background-color: @header-color-fondo;
+    color: @footer-color-fuente;
+    padding: @2 @1;
+    font-size: 0.95rem;
+
+    .footer-contenido {
+        display: flex;
+        flex-direction: column;
+        gap: @2;
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            h3 {
+                margin-bottom: 0.7rem;
+                font-size: 1.1rem;
+                // color: @header-color-fondo-hover;
+                color: @header-color-fondo-hover;
+            }
+
+            p {
+                margin: 0;
+                line-height: 1.5;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    line-height: 1.6;
+                }
+            }
+
+            a {
+                padding: 0.7rem 1.2rem;
+                border-radius: 0.5rem;
+                // font-weight: 600;
+                text-decoration: none;
+                text-align: center;
+                transition: background-color 0.3s, color 0.3s;
+
+                background-color: @header-color-boton;
+                color: white;
+
+                &:hover {
+                    background-color: @header-color-fondo-hover;
+                    color: @header-color-fuente-hover;
+                }
+            }
+        }
+    }
+
+    .footer-copy {
+        text-align: center;
+        margin-top: @2;
+        font-size: 1rem;
+        font-weight: bold;
+        color: lighten(@footer-color-fuente, 10%);
+
+        p {
+            margin-bottom: 0;
+        }
+
+        ;
+    }
+
+    @media (min-width: 768px) {
+        .footer-contenido {
+            flex-direction: row;
+            justify-content: center;
+
+            .footer-col {
+                flex: 1;
+                padding: 0 @1;
+            }
+        }
+    }
+}
+
+@import "hero.less";
+@import "testimoniosMain.less";
+@import "cotizaciones.less";
+@import "Faq.less";
+@import "formularioCotizaciones.less";
+@import "cartasServicios.less";
+@import "galeria.less";
+@import "mesaEmpleos2.less";
+@import "proyectos-destacados.less";
+@import "acercaNosotros.less";
+@import "contactanos.less";
+@import "testimoniosclientes";

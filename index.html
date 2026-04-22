@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="less/principal.less">
+  <script type="module" src="/menu.js"></script>
+  <script type="module" src="/hero.js"></script>
+  <title>Página Principal</title>
+</head>
+
+<body>
+  {{>header}}
+
+  <main>
+      {{>hero heroData=heroData}}
+      {{>testimoniosMain testimonioData=testimoniosMainData}}
+  </main>
+
+  {{>footer}}
+</body>
+
+</html>

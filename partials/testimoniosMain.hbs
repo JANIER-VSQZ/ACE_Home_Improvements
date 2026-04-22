@@ -1,0 +1,10 @@
+<section id="testimonios" class="testimonial-grid">
+    <h2>Testimonios de nuestro equipo</h2>
+    {{#each testimonioData}}
+        {{>testimonioMain
+            imagen=imagen
+            testimonio=testimonio
+            nombre=nombre
+        }}
+     {{/each}}
+</section>
