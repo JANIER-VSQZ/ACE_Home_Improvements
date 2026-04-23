@@ -15,13 +15,22 @@
             <li {{#if menu_4}}class="selected" {{/if}}><a href="galeria.html">Galería</a></li>
             <li {{#if menu_5}}class="selected" {{/if}}><a href="testimonios.html">Testimonios</a></li>
             <li {{#if menu_6}}class="selected" {{/if}}><a href="mesaEmpleos.html">Mesa de Empleos</a></li>
+            <li><button onclick="setLang('es')">ES</button></li>
+            <li><button onclick="setLang('en')">EN</button></li>
+            <script>
+                window.setLang = function (lang) {
+                    localStorage.setItem('lang', lang);
+                    location.reload(); // recarga para aplicar cambios
+                }
+            </script>
 
             <!-- Menu desplegable de más -->
             <li class="dropdown">
                 <button class="dropdown-toggle">Información ▾</button>
                 <ul class="submenu">
                     <li {{#if menu_7}}class="selected" {{/if}}><a href="acercaNosotros.html">Acerca de Nosotros</a></li>
-                    <li {{#if menu_8}}class="selected" {{/if}}><a href="preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+                    <li {{#if menu_8}}class="selected" {{/if}}><a href="preguntasFrecuentes.html">Preguntas
+                            Frecuentes</a></li>
                     <li {{#if menu_9}}class="selected" {{/if}}><a href="contactenos.html">Contáctenos</a></li>
                 </ul>
             </li>

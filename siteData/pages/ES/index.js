@@ -1,0 +1,10 @@
+export { default as heroData } from './heroImagenes';
+export { default as testimoniosMainData } from './testimoniosMain';
+export { default as serviciosData } from './servicios';
+export { default as cotizacionData } from './cotizacion-servicio';
+export { default as formularioData } from './formulario';
+export { default as galeriaData } from './galeria';
+export { default as proyectosDestacadosData } from './proyectosdestacados';
+export { default as datosMesaEmpleos } from './mesasEmpleos';
+export { default as testimoniosclienteData } from './testimoniosclientes';
+export { default as faqData } from './faqData';

@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdown = nav.querySelector('.dropdown');
     const dropdownToggle = nav.querySelector('.dropdown-toggle');
 
+    window.setLang = function (lang) {
+      localStorage.setItem('lang', lang);
+      location.reload(); // recarga para aplicar cambios
+    }
+
     toggle.addEventListener('click', () => {
         const menu = nav.querySelector('.menu');
         menu.classList.toggle('open');
