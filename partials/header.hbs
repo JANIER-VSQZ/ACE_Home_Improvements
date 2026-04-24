@@ -17,12 +17,6 @@
             <li {{#if menu_6}}class="selected" {{/if}}><a href="mesaEmpleos.html">Mesa de Empleos</a></li>
             <li><button onclick="setLang('es')">ES</button></li>
             <li><button onclick="setLang('en')">EN</button></li>
-            <script>
-                window.setLang = function (lang) {
-                    localStorage.setItem('lang', lang);
-                    location.reload(); // recarga para aplicar cambios
-                }
-            </script>
 
             <!-- Menu desplegable de más -->
             <li class="dropdown">

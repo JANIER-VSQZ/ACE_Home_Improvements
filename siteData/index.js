@@ -2,11 +2,11 @@ import * as es from './pages/ES';
 import * as en from './pages/EN';
 
 function getLang() {
-    const lang =
-            (typeof window !== "undefined" && typeof localStorage !== "undefined")
-                ? localStorage.getItem("selectedLanguage") || "es"
-                : "es";
-    return lang;
+    if (typeof window !== "undefined") {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("lang") || "es";
+    }
+    return "es";
 }
 
 function context(page){

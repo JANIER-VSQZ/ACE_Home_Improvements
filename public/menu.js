@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownToggle = nav.querySelector('.dropdown-toggle');
 
     window.setLang = function (lang) {
-      localStorage.setItem('lang', lang);
-      location.reload(); // recarga para aplicar cambios
-    }
+                    localStorage.setItem('lang', lang);
+                    window.location.href = `?lang=${lang}`;
+                }
 
     toggle.addEventListener('click', () => {
         const menu = nav.querySelector('.menu');
