@@ -1,4 +1,4 @@
-export default {
+const preguntasFrecuentes = {
 
   preguntasFrecuentes :[
     {
@@ -51,3 +51,5 @@ export default {
 
   ]
 }
+
+export default preguntasFrecuentes;

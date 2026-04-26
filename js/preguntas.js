@@ -1,4 +1,4 @@
-import { default as preguntasFrecuentes } from '../siteData/pages/ES/faqData.js';
+import preguntasFrecuentes from '../siteData/pages/faqData.js';
 
 const contenedor = document.getElementById('faq-lista');
 const buscador = document.getElementById('buscador');
