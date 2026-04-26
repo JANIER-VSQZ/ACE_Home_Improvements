@@ -1,5 +1,5 @@
 export default{
-    servicios:[
+    cotizacionServicios:[
         {
             nombreServicio: "Techos de asfalto"
         },

@@ -9,7 +9,7 @@ import proyectosDestacadosData from './pages/proyectosdestacados';
 import testimoniosclienteData from './pages/testimoniosclientes';
 
 function context(page){
-    console.log("Getting context for: " + page);
+    //console.log("Getting context for: " + page);
     let context = {
         title: "Mi Sitio ABC",
     }
@@ -37,7 +37,7 @@ function context(page){
             break;
   
     }
-    console.log("Context: ", JSON.stringify(context, null, 2));
+    //console.log("Context: ", JSON.stringify(context, null, 2));
     return context;
 }
 

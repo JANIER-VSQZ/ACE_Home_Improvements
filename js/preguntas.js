@@ -1,4 +1,4 @@
-import preguntasFrecuentes from '../siteData/pages/faqData.js';
+import { preguntasFrecuentes } from '../siteData/pages/faqData.js';
 
 const contenedor = document.getElementById('faq-lista');
 const buscador = document.getElementById('buscador');
@@ -15,10 +15,12 @@ function renderPreguntas(filtradas = preguntasFrecuentes) {
     const encabezado = document.createElement('button');
     encabezado.classList.add('faq-pregunta');
     encabezado.setAttribute('data-index', index);
+    encabezado.setAttribute('data-i18n', `preguntasFrecuentes.${index}.pregunta`);
     encabezado.innerHTML = `<span class="triangulo">▶</span> ${item.pregunta}`;
 
     const respuesta = document.createElement('div');
     respuesta.classList.add('faq-respuesta');
+    respuesta.setAttribute('data-i18n', `preguntasFrecuentes.${index}.respuesta`);
     respuesta.innerText = item.respuesta;
     respuesta.style.display = 'none';
 

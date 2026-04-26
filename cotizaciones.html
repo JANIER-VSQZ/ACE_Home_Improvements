@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="less/principal.less">
     <script type="module" src="/menu.js"></script>
     <script type="module" src="js/cotizaciones.js"></script>
+    <script type="module" src="/i18n.js"></script>
     <title>Cotizaciones</title>
 </head>
 
@@ -21,7 +22,7 @@
             </div>
             <h2>Detalles</h2>
             <p>Seleccione el o los servicios que desea solicitar</p>
-            {{>cotizacionServicios servicioData=servicios}}
+            {{>cotizacionServicios servicioData=cotizacionServicios}}
             <div class="resultado-seleccion" id="resultado-seleccion">
                 Selecciona una opcion
             </div>

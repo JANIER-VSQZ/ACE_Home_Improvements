@@ -6,31 +6,109 @@
   "servicios": [
     {
       "titulo": "Asphalt Roofs",
-      "descripcion": "Asphalt roofs are the most common and cost-effective option to protect your home against rain, hail, and intense sun. With fiberglass or wood composites, asphalt shingles offer excellent waterproofing and a lifespan of 20 to 30 years. Their quick and easy installation minimizes disruptions, while the variety of colors and styles enhances the aesthetics of any home. Additionally, they are easy to repair and recycle, reducing long-term cost and environmental impact."
+      "descripcion": "Asphalt roofs are the most common and cost-effective option to protect your home against rain, hail, and intense sun. With fiberglass or wood composites, asphalt shingles offer excellent waterproofing and a lifespan of 20 to 30 years. Their quick and easy installation minimizes disruptions, while the variety of colors and styles enhances the aesthetics of any home. Additionally, they are easy to repair and recycle, reducing long-term cost and environmental impact.",
+      "boton": "Request a Quote"
     },
     {
       "titulo": "Metal Roofs",
-      "descripcion": "Metal roofs combine strength and longevity, lasting up to 50 years under extreme conditions. Made from steel, aluminum, or copper, they repel heat and withstand strong winds, heavy snow, and hail without cracking. Their light and thin profile reduces structural load, ideal for renovations over existing roofs. They are available in matte, glossy finishes, or with special coatings, giving a modern and minimalist look."
+      "descripcion": "Metal roofs combine strength and longevity, lasting up to 50 years under extreme conditions. Made from steel, aluminum, or copper, they repel heat and withstand strong winds, heavy snow, and hail without cracking. Their light and thin profile reduces structural load, ideal for renovations over existing roofs. They are available in matte, glossy finishes, or with special coatings, giving a modern and minimalist look.",
+      "boton": "Request a Quote"
     },
     {
       "titulo": "Siding",
-      "descripcion": "Siding is an exterior layer that protects and decorates facades, improving thermal insulation and energy efficiency. Available in vinyl, fiber cement, treated wood, or composite panels, it provides resistance to moisture, insects, and sun fading. Its maintenance is minimal: just periodic washing to preserve color and material integrity. Additionally, it allows customization of the home's style with a wide palette of textures and tones."
+      "descripcion": "Siding is an exterior layer that protects and decorates facades, improving thermal insulation and energy efficiency. Available in vinyl, fiber cement, treated wood, or composite panels, it provides resistance to moisture, insects, and sun fading. Its maintenance is minimal: just periodic washing to preserve color and material integrity. Additionally, it allows customization of the home's style with a wide palette of textures and tones.",
+      "boton": "Request a Quote"
     },
     {
       "titulo": "Chimneys",
-      "descripcion": "We offer cleaning, inspection, and repair of chimneys to ensure safe and efficient draft. We address cracks in masonry, joint repointing, installation of protective crowns, and replacement of interior linings. Our service includes certification of compliance with local codes and recommendations to prevent soot fires or water leaks. With regular maintenance, we extend the lifespan of your chimney and improve indoor air quality."
+      "descripcion": "We offer cleaning, inspection, and repair of chimneys to ensure safe and efficient draft. We address cracks in masonry, joint repointing, installation of protective crowns, and replacement of interior linings. Our service includes certification of compliance with local codes and recommendations to prevent soot fires or water leaks. With regular maintenance, we extend the lifespan of your chimney and improve indoor air quality.",
+      "boton": "Request a Quote"
     },
     {
       "titulo": "Exterior Concrete",
-      "descripcion": "We specialize in the construction and restoration of concrete surfaces such as patios, driveways, sidewalks, and terraces. We use high-resistance mixes that withstand temperature changes, oils, and vehicle weight. We offer smooth, stamped, and polished finishes, adapting to your home's style and adding aesthetic and functional value. Additionally, we apply waterproofing sealers to reduce cracks and stains over time."
+      "descripcion": "We specialize in the construction and restoration of concrete surfaces such as patios, driveways, sidewalks, and terraces. We use high-resistance mixes that withstand temperature changes, oils, and vehicle weight. We offer smooth, stamped, and polished finishes, adapting to your home's style and adding aesthetic and functional value. Additionally, we apply waterproofing sealers to reduce cracks and stains over time.",
+      "boton": "Request a Quote"
     },
     {
       "titulo": "Framing",
-      "descripcion": "Framing or wood framing is the foundation of any safe and durable construction. We install beams, studs, and structural panels with selected woods and moisture-resistant and fire-retardant treatments. Our process ensures uniform load distribution, moderate seismic resistance, and ease of incorporating electrical and plumbing installations. Ideal for expansions, internal renovations, or supporting new levels in your home."
+      "descripcion": "Framing or wood framing is the foundation of any safe and durable construction. We install beams, studs, and structural panels with selected woods and moisture-resistant and fire-retardant treatments. Our process ensures uniform load distribution, moderate seismic resistance, and ease of incorporating electrical and plumbing installations. Ideal for expansions, internal renovations, or supporting new levels in your home.",
+      "boton": "Request a Quote"
     },
     {
       "titulo": "Stairs",
-      "descripcion": "We design and install interior and exterior stairs that combine ergonomics, aesthetics, and regulatory compliance. We work with solid wood, metal, or reinforced concrete, offering safe railings and non-slip steps. Each project adapts to the available space, optimizing light and circulation flow. Our approach integrates quality finishes and personalized details, from curved handrails to integrated step lighting."
+      "descripcion": "We design and install interior and exterior stairs that combine ergonomics, aesthetics, and regulatory compliance. We work with solid wood, metal, or reinforced concrete, offering safe railings and non-slip steps. Each project adapts to the available space, optimizing light and circulation flow. Our approach integrates quality finishes and personalized details, from curved handrails to integrated step lighting.",
+      "boton": "Request a Quote"
     }
-  ]
+  ],
+  "acercaNosotros": {
+    "subtitulo": "Our History",
+    "titulo": "About Ace Home Improvement Services",
+    "descripcion1": "We are a company specialized in residential maintenance and improvement services. We handle the entire process: obtaining permits, hiring qualified personnel, acquiring materials, and supervising the project.",
+    "descripcion2": "Our commitment is to provide you with reliable, efficient, and personalized solutions to transform your home into the space you've always dreamed of.",
+    "boton": "Learn More About Us"
+  },
+  "contacto": {
+    "titulo": "Contact Us",
+    "descripcion": "Do you have any questions or comments? Fill out the form and we'll get back to you soon.",
+    "labelNombre": "Full name:",
+    "labelCorreo": "Email address:",
+    "labelMensaje": "Message:",
+    "boton": "Send Message"
+  },
+  "footer": {
+    "horario": "Hours",
+    "lunesViernes": "Mon-Fri: 8 a.m. – 5 p.m.",
+    "sabado": "Saturday: 9 a.m. – 5 p.m.",
+    "domingo": "Sunday: Closed",
+    "contacto": "Get in touch with us",
+    "irContacto": "Go to Contact Us",
+    "derechos": "&copy; All rights reserved by ACE Home Improvement 2025."
+  },
+  "menu": {
+    "servicios": "Services",
+    "proyectos": "Featured Projects",
+    "cotizaciones": "Quotes",
+    "galeria": "Gallery",
+    "testimonios": "Testimonials",
+    "empleos": "Job Board",
+    "informacion": "Information ▾",
+    "acerca": "About Us",
+    "preguntas": "FAQ",
+    "contacto": "Contact Us"
+  },
+  "hero": {
+    "bienvenido": "Welcome to ACE",
+    "descripcion": "We design and build your ideas with quality and responsibility.",
+    "verProyectos": "View Projects",
+    "solicitarCotizacion": "Request a Quote",
+    "somosLideres": "We are leaders in the development of residential, commercial, and industrial projects. We have over 15 years of experience building dreams with high quality standards."
+  },
+  "faq": {
+    "subtitulo": "Information",
+    "titulo": "Frequently Asked Questions",
+    "descripcion": "Here you can find answers to common questions from our clients or topics that might interest you.",
+    "disponibilidadTitulo": "Availability?",
+    "disponibilidadDescripcion": "We provide immediate attention to your needs.",
+    "preciosTitulo": "What are our prices?",
+    "preciosDescripcion": "We have competitive prices adapted to your budget.",
+    "equipoTitulo": "Who makes up our team?",
+    "equipoDescripcion": "Our team is made up of professionals with extensive experience in the sector.",
+    "buscar": "Search question...",
+    "masQuestions": "Do you have more questions? Contact Us!"
+  },
+  "proyectos": {
+    "titulo": "Featured Projects",
+    "descripcion": "Learn about three of our most representative works that reflect our commitment to quality, detail, and customer satisfaction."
+  },
+  "empleos": {
+    "ubicacion": "Location:",
+    "tipo": "Type:",
+    "tipoContrato": "Contract Type:",
+    "descripcion": "Description:",
+    "descripcionPuesto": "Job Description:",
+    "aplicar": "Apply Now",
+    "nombre": "Name:",
+    "email": "Email:",
+    "telefono": "Phone:"
+  }
 }

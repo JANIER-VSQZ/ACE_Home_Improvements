@@ -9,23 +9,22 @@
         </div>
 
         <ul class="menu">
-            <li {{#if menu_1}}class="selected" {{/if}}><a href="servicios.html">Servicios</a></li>
-            <li {{#if menu_2}}class="selected" {{/if}}><a href="proyectosDestacados.html">Proyectos Destacados</a></li>
-            <li {{#if menu_3}}class="selected" {{/if}}><a href="cotizaciones.html">Cotizaciones</a></li>
-            <li {{#if menu_4}}class="selected" {{/if}}><a href="galeria.html">Galería</a></li>
-            <li {{#if menu_5}}class="selected" {{/if}}><a href="testimonios.html">Testimonios</a></li>
-            <li {{#if menu_6}}class="selected" {{/if}}><a href="mesaEmpleos.html">Mesa de Empleos</a></li>
+            <li {{#if menu_1}}class="selected" {{/if}}><a href="servicios.html" data-i18n="menu.servicios">Servicios</a></li>
+            <li {{#if menu_2}}class="selected" {{/if}}><a href="proyectosDestacados.html" data-i18n="menu.proyectos">Proyectos Destacados</a></li>
+            <li {{#if menu_3}}class="selected" {{/if}}><a href="cotizaciones.html" data-i18n="menu.cotizaciones">Cotizaciones</a></li>
+            <li {{#if menu_4}}class="selected" {{/if}}><a href="galeria.html" data-i18n="menu.galeria">Galería</a></li>
+            <li {{#if menu_5}}class="selected" {{/if}}><a href="testimonios.html" data-i18n="menu.testimonios">Testimonios</a></li>
+            <li {{#if menu_6}}class="selected" {{/if}}><a href="mesaEmpleos.html" data-i18n="menu.empleos">Mesa de Empleos</a></li>
             <li><button onclick="setLang('es')">ES</button></li>
             <li><button onclick="setLang('en')">EN</button></li>
 
             <!-- Menu desplegable de más -->
             <li class="dropdown">
-                <button class="dropdown-toggle">Información ▾</button>
+                <button class="dropdown-toggle" data-i18n="menu.informacion">Información ▾</button>
                 <ul class="submenu">
-                    <li {{#if menu_7}}class="selected" {{/if}}><a href="acercaNosotros.html">Acerca de Nosotros</a></li>
-                    <li {{#if menu_8}}class="selected" {{/if}}><a href="preguntasFrecuentes.html">Preguntas
-                            Frecuentes</a></li>
-                    <li {{#if menu_9}}class="selected" {{/if}}><a href="contactenos.html">Contáctenos</a></li>
+                    <li {{#if menu_7}}class="selected" {{/if}}><a href="acercaNosotros.html" data-i18n="menu.acerca">Acerca de Nosotros</a></li>
+                    <li {{#if menu_8}}class="selected" {{/if}}><a href="preguntasFrecuentes.html" data-i18n="menu.preguntas">Preguntas Frecuentes</a></li>
+                    <li {{#if menu_9}}class="selected" {{/if}}><a href="contactenos.html" data-i18n="menu.contacto">Contáctenos</a></li>
                 </ul>
             </li>
         </ul>

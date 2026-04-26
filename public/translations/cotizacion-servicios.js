@@ -1,6 +1,6 @@
 export default {
     es: {
-        servicios: [
+        cotizacionServicios: [
             {
                 nombreServicio: "Techos de asfalto"
             },
@@ -25,7 +25,7 @@ export default {
         ]
     },
     en: {
-        servicios: [
+        cotizacionServicios: [
             {
                 nombreServicio: "Asphalt Roofs"
             },
