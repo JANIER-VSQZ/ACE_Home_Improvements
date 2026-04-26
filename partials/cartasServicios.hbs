@@ -3,19 +3,29 @@
     <div class="carta-servicio">
         <div class="izquierda">
             <div class="img-servicio">
-                <img src={{this.imgLink}} alt="imagen {{this.titulo}}">
+                <img src="{{this.imgLink}}" alt="imagen {{this.titulo}}">
             </div>
         </div>
+
         <div class="derecha">
             <div class="titulo-servicio" data-i18n="servicios.{{@index}}.titulo">
                 {{this.titulo}}
             </div>
+
             <div class="body-servicio">
-                <p class="" data-i18n="servicios.{{@index}}.descripcion">{{this.descripcion}}</p>
+                <p data-i18n="servicios.{{@index}}.descripcion">
+                    {{this.descripcion}}
+                </p>
             </div>
+
             <div class="footer-servicio">
                 <div class="btn-servicio">
-                    <a href="cotizaciones.html?boton={{this.titulo}}">Solicitar Cotización</a>
+                    <a 
+                        href="cotizaciones.html?boton={{this.titulo}}" 
+                        data-i18n="servicios.{{@index}}.boton"
+                    >
+                        Solicitar Cotización
+                    </a>
                 </div>
             </div>
         </div>

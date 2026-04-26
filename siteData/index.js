@@ -1,83 +1,42 @@
-import * as es from './pages/ES';
-import * as en from './pages/EN';
-
-function getLang() {
-    if (typeof window !== "undefined") {
-        const params = new URLSearchParams(window.location.search);
-        return params.get("lang") || "es";
-    }
-    return "es";
-}
+import cotizacionData from './pages/cotizacion-servicio';
+import formularioData from './pages/formulario'
+import testimoniosMainData from './pages/testimoniosMain';
+import heroData from './pages/heroImagenes';
+import serviciosData from './pages/servicios';
+import datosMesaEmpleos from './pages/mesasEmpleos';
+import galeriaData from './pages/galeria';
+import proyectosDestacadosData from './pages/proyectosdestacados';
+import testimoniosclienteData from './pages/testimoniosclientes';
 
 function context(page){
-    const lang = getLang();
-    const langData = lang === 'en' ? en : es;
-
-    console.log("Getting context for:", page, "lang:", lang);
-
+    console.log("Getting context for: " + page);
     let context = {
-        title: lang === 'es' ? "Mi Sitio ABC" : "My Site ABC",
-    };
-
+        title: "Mi Sitio ABC",
+    }
     switch(page){
         case "/index.html":
-            context = {
-                ...context,
-                ...langData.heroData,
-                ...langData.testimoniosMainData
-            };
+            context = {...context, ...heroData, ...testimoniosMainData};
             break;
-
         case '/cotizaciones.html':
-            context = {
-                ...context,
-                ...langData.cotizacionData,
-                ...langData.formularioData
-            };
+            context = {...context, ...cotizacionData, ...formularioData};
             break;
-
         case '/servicios.html':
-            context = {
-                ...context,
-                ...langData.serviciosData
-            };
+            context = {...context, ...serviciosData};
             break;
-
         case '/proyectosDestacados.html':
-            context = {
-                ...context,
-                ...langData.proyectosDestacadosData
-            };
+            context = {...context, ...proyectosDestacadosData};
             break;
-
         case '/galeria.html':
-            context = {
-                ...context,
-                ...langData.galeriaData
-            };
+            context = {...context, ...galeriaData};
             break;
-
         case '/mesaEmpleos.html':
-            context = {
-                ...context,
-                ...langData.datosMesaEmpleos
-            };
+            context = {...context, ...datosMesaEmpleos};
             break;
-
         case '/testimonios.html':
-            context = {
-                ...context,
-                ...langData.testimoniosclienteData
-            };
+            context = {...context, ...testimoniosclienteData};
             break;
-        case '/preguntasFrecuentes.html':
-            context = {
-                ...context,
-                ...langData.faqData
-            };
-            break;
+  
     }
-
     console.log("Context: ", JSON.stringify(context, null, 2));
     return context;
 }
