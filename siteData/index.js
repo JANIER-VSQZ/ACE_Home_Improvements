@@ -15,7 +15,7 @@ function context(page){
     }
     switch(page){
         case "/index.html":
-            context = {...context, ...heroData, ...testimoniosMainData};
+            context = {...context, ...heroData, ...testimoniosMainData, ...cotizacionData};
             break;
         case '/cotizaciones.html':
             context = {...context, ...cotizacionData, ...formularioData};
