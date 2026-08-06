@@ -1,0 +1,13 @@
+<div class="seccion-formulario">
+
+    <p>{{descripcionSeccion}}</p>
+
+    {{#each campos}}
+        {{> campo this}}
+    {{/each}}
+
+    {{#if boton}}
+        {{> boton this}}
+    {{/if}}
+
+</div>

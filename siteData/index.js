@@ -26,14 +26,8 @@ function context(page){
         case '/proyectosDestacados.html':
             context = {...context, ...proyectosDestacadosData};
             break;
-        case '/galeria.html':
-            context = {...context, ...galeriaData};
-            break;
         case '/mesaEmpleos.html':
             context = {...context, ...datosMesaEmpleos};
-            break;
-        case '/testimonios.html':
-            context = {...context, ...testimoniosclienteData};
             break;
   
     }

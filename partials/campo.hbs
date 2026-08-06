@@ -1,0 +1,14 @@
+<div class="div{{name}}" id="div{{name}}">
+
+    {{#if label}}
+    <label for="{{id}}">{{label}}</label>
+    {{/if}}
+
+    <input type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}" title="{{title}}" {{#if
+        required}}required{{/if}}>
+
+    {{#if boton}}
+    <button type="submit">{{boton}}</button>
+    {{/if}}
+
+</div>

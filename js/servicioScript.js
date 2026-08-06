@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+    const selected = new Set();
+    const params = new URLSearchParams(window.location.search);
+    const servicioParam = params.get('SRV');
+
+    if (servicioParam) {
+        const srvTarget = document.querySelector(`.carta-servicio[data-label="${servicioParam}"]`);
+        console.log("SRV Param:", servicioParam, "Target:", srvTarget);
+        if (srvTarget) {
+            srvTarget.focus();
+            console.log("Focused on:", srvTarget);
+        }
+    }
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

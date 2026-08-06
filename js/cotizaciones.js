@@ -13,56 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const txtCorreo = document.getElementById("txtCorreo");
     const txtTelefono=document.getElementById("txtTelefono");
 
-    mostrarFormulario();
-
-    const params = new URLSearchParams(window.location.search);
-    const botonParam = params.get('boton');
-
-    if (botonParam) {
-        const btnTarget = document.querySelector(`.servicio[data-label="${botonParam}"]`);
-        if (btnTarget) {
-            btnTarget.classList.add('activo');
-            selected.add(botonParam);
-            mostrarSeleccion();
-        }
-    }
-
-    document.querySelectorAll('.servicio').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const label = btn.dataset.label;
-            btn.classList.toggle('activo');
-
-            if (selected.has(label)) {
-                selected.delete(label);
-            } else {
-                selected.add(label);
-            }
-            mostrarSeleccion();
-        });
-    });
-
-
-    function mostrarSeleccion() {
-        let seleccionServicio = document.getElementById('resultado-seleccion')
-        const result = [...selected].join(', ');
-        if (selected.size > 0) {
-            hayBtnSeleccionado = true;
-        } else {
-            hayBtnSeleccionado = false;
-        }
-        mostrarFormulario();
-        seleccionServicio.textContent =
-            result ? `Servicios seleccionados: ${result}` : 'Por favor, seleccione un servicio';
-
-    }
-
-    function mostrarFormulario() {
-        if (hayBtnSeleccionado) {
-            contenedorFrm.classList.add('visible');
-        } else {
-            contenedorFrm.classList.remove('visible');
-        }
-    }
 
     //validaciones formulario
     const camposObligatorios = [

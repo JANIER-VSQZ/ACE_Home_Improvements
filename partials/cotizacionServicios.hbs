@@ -5,9 +5,10 @@
             <div class="img-servicio">
                 <img src="{{this.imgLink}}" alt="{{this.nombreServicio}}">
             </div>
-            <button class="btn-Servicio" type="button" class="btn-servicio" data-label="{{this.nombreServicio}}">
+            <div  class="btn-servicio" data-label="{{this.nombreServicio}}">
                 <p data-i18n="cotizacionServicios.{{@index}}.nombreServicio">{{this.nombreServicio}}</p>
-            </button>   
+            </div>  
+            <a class="mas-info" href="servicios.html?SRV={{this.nombreServicio}}">Mas Información.</a> 
         </div>
         {{/each}}
     </div>
