@@ -1,0 +1,36 @@
+<div class="form__field">
+  <label for="{{id}}" data-i18n="{{labelKey}}">{{t labelKey}}</label>
+  {{#if isSelect}}
+    <select id="{{id}}" name="{{name}}" {{#if required}}required{{/if}}>
+      {{#each options}}
+        <option value="{{value}}" data-i18n="{{labelKey}}">{{t labelKey}}</option>
+      {{/each}}
+    </select>
+  {{else if isTextarea}}
+    <textarea
+      id="{{id}}"
+      name="{{name}}"
+      rows="4"
+      {{#if placeholderKey}}
+        placeholder="{{t placeholderKey}}"
+        title="{{t titleKey}}"
+        data-i18n="[placeholder]{{placeholderKey}};[title]{{titleKey}}"
+      {{/if}}
+      {{#if required}}required{{/if}}
+    ></textarea>
+  {{else}}
+    <input
+      id="{{id}}"
+      name="{{name}}"
+      type="{{type}}"
+      {{#if placeholderKey}}
+        placeholder="{{t placeholderKey}}"
+        title="{{t titleKey}}"
+        data-i18n="[placeholder]{{placeholderKey}};[title]{{titleKey}}"
+      {{/if}}
+      {{#if autocomplete}}autocomplete="{{autocomplete}}"{{/if}}
+      {{#if inputmode}}inputmode="{{inputmode}}"{{/if}}
+      {{#if required}}required{{/if}}
+    >
+  {{/if}}
+</div>

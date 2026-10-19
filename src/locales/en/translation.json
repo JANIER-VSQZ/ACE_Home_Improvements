@@ -1,0 +1,466 @@
+{
+  "servicios": [
+    {
+      "titulo": "Asphalt Roofs",
+      "descripcion": "Asphalt roofs are the most common and cost-effective option to protect your home against rain, hail, and intense sun. With fiberglass or wood composites, asphalt shingles offer excellent waterproofing and a lifespan of 20 to 30 years. Their quick and easy installation minimizes disruptions, while the variety of colors and styles enhances the aesthetics of any home. Additionally, they are easy to repair and recycle, reducing long-term cost and environmental impact.",
+      "boton": "Request a Quote"
+    },
+    {
+      "titulo": "Metal Roofs",
+      "descripcion": "Metal roofs combine strength and longevity, lasting up to 50 years under extreme conditions. Made from steel, aluminum, or copper, they repel heat and withstand strong winds, heavy snow, and hail without cracking. Their light and thin profile reduces structural load, ideal for renovations over existing roofs. They are available in matte, glossy finishes, or with special coatings, giving a modern and minimalist look.",
+      "boton": "Request a Quote"
+    },
+    {
+      "titulo": "Siding",
+      "descripcion": "Siding is an exterior layer that protects and decorates facades, improving thermal insulation and energy efficiency. Available in vinyl, fiber cement, treated wood, or composite panels, it provides resistance to moisture, insects, and sun fading. Its maintenance is minimal: just periodic washing to preserve color and material integrity. Additionally, it allows customization of the home's style with a wide palette of textures and tones.",
+      "boton": "Request a Quote"
+    },
+    {
+      "titulo": "Chimneys",
+      "descripcion": "We offer cleaning, inspection, and repair of chimneys to ensure safe and efficient draft. We address cracks in masonry, joint repointing, installation of protective crowns, and replacement of interior linings. Our service includes certification of compliance with local codes and recommendations to prevent soot fires or water leaks. With regular maintenance, we extend the lifespan of your chimney and improve indoor air quality.",
+      "boton": "Request a Quote"
+    },
+    {
+      "titulo": "Exterior Concrete",
+      "descripcion": "We specialize in the construction and restoration of concrete surfaces such as patios, driveways, sidewalks, and terraces. We use high-resistance mixes that withstand temperature changes, oils, and vehicle weight. We offer smooth, stamped, and polished finishes, adapting to your home's style and adding aesthetic and functional value. Additionally, we apply waterproofing sealers to reduce cracks and stains over time.",
+      "boton": "Request a Quote"
+    },
+    {
+      "titulo": "Framing",
+      "descripcion": "Framing or wood framing is the foundation of any safe and durable construction. We install beams, studs, and structural panels with selected woods and moisture-resistant and fire-retardant treatments. Our process ensures uniform load distribution, moderate seismic resistance, and ease of incorporating electrical and plumbing installations. Ideal for expansions, internal renovations, or supporting new levels in your home.",
+      "boton": "Request a Quote"
+    },
+    {
+      "titulo": "Stairs",
+      "descripcion": "We design and install interior and exterior stairs that combine ergonomics, aesthetics, and regulatory compliance. We work with solid wood, metal, or reinforced concrete, offering safe railings and non-slip steps. Each project adapts to the available space, optimizing light and circulation flow. Our approach integrates quality finishes and personalized details, from curved handrails to integrated step lighting.",
+      "boton": "Request a Quote"
+    }
+  ],
+  "acercaNosotros": {
+    "subtitulo": "Our History",
+    "titulo": "About Ace Home Improvement Services",
+    "descripcion1": "We are a company specialized in residential maintenance and improvement services. We handle the entire process: obtaining permits, hiring qualified personnel, acquiring materials, and supervising the project.",
+    "descripcion2": "Our commitment is to provide you with reliable, efficient, and personalized solutions to transform your home into the space you've always dreamed of.",
+    "boton": "Learn More About Us",
+    "imagenes": [
+      "Team at work",
+      "Reviewing plans",
+      "Satisfied customer"
+    ]
+  },
+  "contacto": {
+    "titulo": "Contact Us",
+    "descripcion": "Do you have any questions or comments? Fill out the form and we'll get back to you soon.",
+    "labelNombre": "Full name:",
+    "labelCorreo": "Email address:",
+    "labelMensaje": "Message:",
+    "boton": "Test form",
+    "dudas": "Have questions? Write to us!",
+    "numeros": "Contact Numbers",
+    "imagen": "Construction hard hat"
+  },
+  "footer": {
+    "horario": "Hours",
+    "lunesViernes": "Mon-Fri: 8 a.m. – 5 p.m.",
+    "sabado": "Saturday: 9 a.m. – 5 p.m.",
+    "domingo": "Sunday: Closed",
+    "contacto": "Get in touch with us",
+    "irContacto": "Go to Contact Us",
+    "derechos": "© All rights reserved by ACE Home Improvement 2025."
+  },
+  "menu": {
+    "servicios": "Services",
+    "proyectos": "Featured Projects",
+    "cotizaciones": "Quotes",
+    "galeria": "Gallery",
+    "testimonios": "Testimonials",
+    "empleos": "Job Board",
+    "informacion": "Information ▾",
+    "acerca": "About Us",
+    "preguntas": "FAQ",
+    "contacto": "Contact Us",
+    "inicio": "Go to Home",
+    "logo": "ACE Home Improvement logo",
+    "abrir": "Open menu"
+  },
+  "hero": {
+    "bienvenido": "Welcome to",
+    "descripcion": "We design and build your ideas with quality and responsibility.",
+    "verProyectos": "View Projects",
+    "solicitarCotizacion": "Request a Quote",
+    "somosLideres": "We are leaders in the development of residential, commercial, and industrial projects. We have over 15 years of experience building dreams with high quality standards.",
+    "imagen": "ACE roofing project"
+  },
+  "faq": {
+    "subtitulo": "Information",
+    "titulo": "Frequently Asked Questions",
+    "descripcion": "Here you can find answers to common questions from our clients or topics that might interest you.",
+    "disponibilidadTitulo": "Availability?",
+    "disponibilidadDescripcion": "We provide immediate attention to your needs.",
+    "preciosTitulo": "What are our prices?",
+    "preciosDescripcion": "We have competitive prices adapted to your budget.",
+    "equipoTitulo": "Who makes up our team?",
+    "equipoDescripcion": "Our team is made up of professionals with extensive experience in the sector.",
+    "buscar": "Search question...",
+    "masPreguntas": "Do you have more questions? Contact Us!",
+    "sinResultados": "No questions found.",
+    "iconoDisponibilidad": "Availability",
+    "iconoPrecios": "Prices",
+    "iconoEquipo": "Team"
+  },
+  "proyectos": {
+    "titulo": "Featured Projects",
+    "descripcion": "Learn about three of our most representative works that reflect our commitment to quality, detail, and customer satisfaction.",
+    "items": [
+      {
+        "titulo": "Highly durable roofing",
+        "descripcion": "For this roofing project, we installed premium asphalt shingles with a fiberglass core and mineral coating, designed to resist impacts and UV rays. The roof was prepared with OSB sheathing and a synthetic waterproof barrier to ensure watertightness. The shingles were laid with precise overlaps and specialized fasteners for efficient drainage. Ventilated gutters and metal flashings protect critical areas, creating an even, durable roof that requires little maintenance."
+      },
+      {
+        "titulo": "Premium siding finish",
+        "descripcion": "For this siding project, we installed a ventilated facade with horizontal treated-wood slats, aligned for a contemporary finish and warm texture. Each slat was selected for its weather resistance and natural grain and secured with concealed stainless steel anchors for clean lines. We added a garage door with frosted glass panels framed in black metal, creating an elegant contrast and enhancing diffused light. Above it, a wall light with a black base and opal diffuser highlights the wood at night. Palm trees and ornamental plants add freshness and connect the project with its surroundings. The result is a modern, harmonious facade that enhances the home."
+      },
+      {
+        "titulo": "Exterior stairs and walkway",
+        "descripcion": "For this project, we designed and built reinforced concrete exterior stairs and a curved walkway connecting the main entrance to the street. The stairs have 17 cm risers and 30 cm treads, a brushed non-slip finish, and natural stone edges for durability, using custom formwork and H-25 concrete poured on site.\n\nThe 1.2 m wide walkway was built with light-gray polished concrete and perimeter expansion joints to support drainage and prevent cracks.\n\nWe added recessed step lighting and planters with grass and ornamental shrubs, creating a safe, attractive entrance that complements the home’s contemporary architecture."
+      }
+    ]
+  },
+  "empleos": {
+    "titulo": "Work with us",
+    "introduccion": "Select the position you are interested in to review its requirements and complete your application.",
+    "detalles": "Position details",
+    "indicacion": "Choose an opening in the form to see its location, contract type, and requirements.",
+    "formulario": "Job application",
+    "puesto": "Position you want to apply for:",
+    "seleccionar": "Select a position",
+    "ubicacion": "Location:",
+    "tipo": "Type:",
+    "tipoContrato": "Contract Type:",
+    "descripcion": "Description:",
+    "descripcionPuesto": "Job Description:",
+    "aplicar": "Test application",
+    "nombre": "Name:",
+    "email": "Email:",
+    "telefono": "Phone:",
+    "items": [
+      {
+        "plaza": "Civil Engineer",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Responsible for planning and supervising infrastructure projects such as houses, buildings, and roads. A university degree in Civil Engineering and at least 3 years of field experience are required. Proficiency in AutoCAD and Civil 3D. Fluent English is mandatory; Spanish is desirable."
+      },
+      {
+        "plaza": "Construction Supervisor",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Direct supervision of construction crews on site. At least 5 years of experience leading building or road projects. Knowledge of OSHA regulations. Bilingual English/Spanish candidates are preferred."
+      },
+      {
+        "plaza": "Surveyor",
+        "tipoContrato": "Project-based",
+        "descripcionPuesto": "Land measurement and surveying for future developments. Knowledge of total stations, GPS, and CAD software is required. Surveying technician or engineer. English is required; German is an advantage."
+      },
+      {
+        "plaza": "Architect",
+        "tipoContrato": "Part-time",
+        "descripcionPuesto": "Design architectural plans and verify compliance with local regulations. At least 2 years of experience. Advanced AutoCAD, Revit, and SketchUp skills. Fluent English; German or Spanish is optional."
+      },
+      {
+        "plaza": "Heavy Equipment Operator",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Operate excavators, front-end loaders, and backhoes. A valid license and 2 years of experience are required. Basic English and fluent Spanish are required for site safety."
+      },
+      {
+        "plaza": "General Construction Worker",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "General site support: mixing cement, loading materials, and cleaning work areas. Previous experience is valued but not required. Training is provided. Spanish is required; basic English."
+      },
+      {
+        "plaza": "Construction Electrician",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Electrical installation in buildings under construction. A valid certification and 3 years of site experience are required. English is mandatory; Spanish is desirable."
+      },
+      {
+        "plaza": "Mason",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Build walls and concrete structures and carry out finish work. At least 4 years of proven experience. Fluent Spanish is required; English is optional."
+      },
+      {
+        "plaza": "Plumbing Technician",
+        "tipoContrato": "Contract",
+        "descripcionPuesto": "Install piping and drainage systems and review plumbing plans. Certified technician with at least 2 years of experience. English and Spanish are required."
+      },
+      {
+        "plaza": "Construction Foreman",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Coordinate construction teams, schedules, and materials. At least 5 years of experience as a site manager. Fluent English is required, along with communication skills in Spanish."
+      },
+      {
+        "plaza": "Structural Engineer",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Calculate and design structures for residential and commercial buildings. A degree in Structural or Civil Engineering is required. Advanced English and technical German are recommended for international collaboration."
+      },
+      {
+        "plaza": "Construction Helper",
+        "tipoContrato": "Part-time",
+        "descripcionPuesto": "Assist with basic site tasks such as loading, cleaning, and supporting specialized staff. No experience is required. Spanish is essential; basic English is useful."
+      },
+      {
+        "plaza": "Demolition Specialist",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Carry out structural demolition following safety protocols. Knowledge of machinery and the use of controlled explosives. Spanish and English are required."
+      },
+      {
+        "plaza": "Highway Engineer",
+        "tipoContrato": "Full-time",
+        "descripcionPuesto": "Plan and supervise road and urban construction. Experience with DOT projects. A high level of technical English is required. Basic German is a plus."
+      },
+      {
+        "plaza": "Concrete Specialist",
+        "tipoContrato": "Project-based",
+        "descripcionPuesto": "Responsible for concrete mixing, pouring, and curing. Certification in concrete techniques is preferred. Fluent Spanish is required; English is desirable."
+      }
+    ]
+  },
+  "generalServicios": {
+    "titulo": "Services",
+    "descripcion": "Comprehensive residential maintenance services offer technical solutions for repairs, installations, and preventative maintenance of homes. Our goal is to extend the lifespan of your property and improve comfort in your home with efficient and reliable service."
+  },
+  "preguntasFrecuentes": [
+    {
+      "pregunta": "What type of services does Ace Home Improvement Services offer?",
+      "respuesta": "We offer comprehensive residential maintenance, including remodeling, repairs, installations, painting, plumbing, electrical work, and more."
+    },
+    {
+      "pregunta": "Does Ace handle obtaining the necessary permits for the work?",
+      "respuesta": "Yes. We manage the entire process of municipal and legal permits required for each type of project."
+    },
+    {
+      "pregunta": "Do you hire workers directly or subcontract?",
+      "respuesta": "We have qualified staff and also collaborate with certified providers and contractors depending on the needs of the project."
+    },
+    {
+      "pregunta": "Can I request a free quote?",
+      "respuesta": "Yes. You can request a no-obligation quote through the form on our website or by calling our contact number directly."
+    },
+    {
+      "pregunta": "In which areas or regions do you offer your services?",
+      "respuesta": "We currently operate in the United States, but you can contact us to confirm availability in your area."
+    },
+    {
+      "pregunta": "How are materials managed for projects?",
+      "respuesta": "We handle all material logistics: selection, purchasing, and delivery to the project site, always prioritizing quality and efficiency."
+    },
+    {
+      "pregunta": "Do you offer a warranty on your work?",
+      "respuesta": "Yes. All our services include a warranty, whose duration depends on the type of work performed. Details are included in each contract."
+    },
+    {
+      "pregunta": "How can I track the progress of my project?",
+      "respuesta": "We assign a supervisor who stays in contact with you throughout the process and provides regular updates."
+    },
+    {
+      "pregunta": "Do you accept online payments or credit cards?",
+      "respuesta": "Yes. We offer multiple payment methods, including bank transfers, credit cards, and online payments through our website."
+    },
+    {
+      "pregunta": "How long does a typical project take to complete?",
+      "respuesta": "It depends on the type and scope of the work. A minor repair may take hours, while full remodels may take several weeks. We provide a detailed timeline at the start of the project."
+    }
+  ],
+  "paginas": {
+    "inicio": "Home",
+    "acerca": "About Us",
+    "contacto": "Contact Us",
+    "cotizaciones": "Quotes",
+    "galeria": "Gallery",
+    "empleos": "Job Board",
+    "preguntas": "Frequently Asked Questions",
+    "proyectos": "Featured Projects",
+    "testimonios": "Customer Testimonials"
+  },
+  "comun": {
+    "masInformacion": "More information.",
+    "nuestrosServicios": "Our Services:",
+    "saltarContenido": "Skip to content",
+    "navegacion": "Main navigation"
+  },
+  "cotizaciones": {
+    "titulo": "Quotes",
+    "descripcion": "Transform your home with reliable, specialized solutions. Request a no-obligation quote today and get personalized assistance with roofing, siding, concrete, and more.",
+    "detalles": "Details",
+    "instrucciones": "Please complete the following form:",
+    "secciones": [
+      "General service information",
+      "Personal information"
+    ],
+    "enviar": "Test form",
+    "campos": {
+      "Dimensiones": {
+        "label": "Approximate area",
+        "placeholder": "E.g. 120.5",
+        "title": "Enter the approximate area and select the unit."
+      },
+      "Condicion": {
+        "label": "Current condition",
+        "placeholder": "Current condition of the home.",
+        "title": "The current condition of the work site."
+      },
+      "Ubicacion": {
+        "label": "City or ZIP code",
+        "placeholder": "Project city or ZIP code.",
+        "title": "To check availability in your area."
+      },
+      "Observacion": {
+        "label": "Additional notes (optional)",
+        "placeholder": "Important details.",
+        "title": "Important details you would like to add."
+      },
+      "Nombre": {
+        "label": "First name",
+        "placeholder": "Applicant's first name.",
+        "title": "Applicant's first name."
+      },
+      "Apellido": {
+        "label": "Last name",
+        "placeholder": "Applicant's last name.",
+        "title": "Applicant's last name."
+      },
+      "Correo": {
+        "label": "Email address",
+        "placeholder": "Applicant's email address.",
+        "title": "Applicant's email address."
+      },
+      "Telefono": {
+        "label": "Phone",
+        "placeholder": "Applicant's phone number.",
+        "title": "Applicant's phone number."
+      }
+    },
+    "unidad": "Area unit",
+    "pies": "Square feet (ft²)",
+    "metros": "Square meters (m²)"
+  },
+  "validacion": {
+    "requeridos": {
+      "Dimensiones": "Enter the approximate project area.",
+      "Condicion": "Current condition cannot be empty.",
+      "Ubicacion": "Enter the city or ZIP code.",
+      "Nombre": "First name cannot be empty.",
+      "Apellido": "Last name cannot be empty.",
+      "Correo": "Email address cannot be empty.",
+      "Telefono": "Phone cannot be empty."
+    },
+    "soloNumeros": "Please enter numbers only.",
+    "nombreInvalido": "Invalid first name.",
+    "apellidoInvalido": "Invalid last name.",
+    "correoInvalido": "Invalid email address.",
+    "telefonoInvalido": "Please enter a valid phone number.",
+    "nombreEmpleo": "Please enter your name.",
+    "puestoEmpleo": "Select the position you want to apply for.",
+    "nombreCompletoInvalido": "Enter a valid name without numbers or special symbols.",
+    "correoRequeridoEmpleo": "Email address cannot be empty.",
+    "telefonoRequeridoEmpleo": "Phone cannot be empty.",
+    "correoEmpleo": "Please enter a valid email address.",
+    "telefonoEmpleo": "The phone number must contain exactly 10 digits.",
+    "areaInvalida": "Enter an area greater than zero, for example 120.5.",
+    "mensajeRequerido": "Please enter a message."
+  },
+  "galeria": {
+    "titulo": "Gallery",
+    "instruccion": "Hover over \"Gallery\" to see more information",
+    "descripcion": "Our gallery features real examples of our roofing, siding, and exterior finishing work. Each project reflects our quality and precision, from installing durable shingles to long-lasting siding that enhances facades. We also offer walkways and exterior stairs as individual services, connecting your home safely and harmoniously with its surroundings. Explore our solutions and discover how we can transform every detail into a functional, attractive space.",
+    "irA": "Click a button to go to:",
+    "imagenes": "Image gallery",
+    "herramientas": "Tool gallery",
+    "items": {
+      "work": [
+        "Technicians on a ladder repairing a second-floor window on a house with beige siding and a stone base.",
+        "A worker wearing a hard hat on scaffolding installing trim on the blue facade of a home.",
+        "A worker wearing green gloves removing damaged red and black shingles during a roof repair.",
+        "A professional wearing a hard hat and reflective vest adjusting roof shingles, demonstrating the use of safety equipment.",
+        "During the initial phase, the roof frame has aligned wooden beams secured with safety harnesses while the team checks leveling and temporary anchors before final sealing.",
+        "We apply Karnak asphalt primer and torch-weld a bituminous membrane, sealing joints and details around pipes and vents for long-lasting waterproofing.",
+        "We identified cracks, holes, and advanced rot in the original wood. We removed the damaged pieces, reinforced the beams with treated wood, and leveled the structure.",
+        "We installed 15 mm marine plywood panels secured with galvanized screws and neoprene washers for watertightness and durability. The result is a solid, even base ready for the next roofing phase."
+      ],
+      "tools": [
+        "Laser level: projects horizontal or vertical light lines for precise alignment.",
+        "Miter saw: an adjustable rotating blade that makes precise angled cuts in wood.",
+        "Pneumatic nail gun: drives nails with compressed air for fast fastening.",
+        "Concrete vibrator: vibrates fresh concrete to compact it and remove trapped air.",
+        "Stainless steel trowel: a hand tool for smoothing mortar and creating an even finish.",
+        "Caulking gun: pushes sealant from a cartridge to apply continuous, controlled beads."
+      ]
+    }
+  },
+  "testimonios": {
+    "titulo": "Testimonials from our customers",
+    "equipo": "Testimonials from our team",
+    "items": [
+      "“Impeccable work! The construction company exceeded our expectations. They delivered the project on time and with quality.”",
+      "“From day one, they showed professionalism and commitment. They supported us throughout the process, and the result was exactly what we wanted.”",
+      "“Excellent customer service, first-rate materials, and a highly skilled team. You can tell they are passionate about what they do.”",
+      "“We are delighted with our new home. The entire process was transparent, organized, and free of surprises. A positive experience.”",
+      "“What I valued most was their ability to listen to my ideas and make them a reality. They adapted to my creativity.”",
+      "“The construction company proved reliable and dependable. They kept us informed throughout the process and answered every question.”",
+      "“They did an extraordinary job with the finishes. They took care of every detail as if it were their own home.”",
+      "“I recommend this company without hesitation. Their responsibility, experience, and personal care made all the difference in my project.”"
+    ],
+    "empleados": [
+      {
+        "nombre": "Luis David, roofing specialist",
+        "testimonio": "“I have worked for many companies, but here they value our effort. There is always work, and payment is on time.”"
+      },
+      {
+        "nombre": "Pedro Gutiérrez, siding installer",
+        "testimonio": "“What I like most is the atmosphere. We are like a family, and coworkers always support each other.”"
+      },
+      {
+        "nombre": "Roberto Hernández, carpenter",
+        "testimonio": "“I started as a helper, and now I am a team leader. There are real opportunities to grow here.”"
+      },
+      {
+        "nombre": "Javier Ríos, remodeling technician",
+        "testimonio": "“The company always gives us the tools and materials we need. That makes the work much easier.”"
+      }
+    ]
+  },
+  "inicio": {
+    "coberturaBreve": "Projects in the United States · Ask about your area",
+    "portafolio": "Our work",
+    "proyectosDescripcion": "Explore the materials, finishes, and details of our projects.",
+    "verGaleria": "Explore the gallery",
+    "verProyecto": "View project",
+    "resumenProyectos": [
+      "Asphalt shingles and a waterproof barrier to protect the roof.",
+      "Treated wood siding with a contemporary finish.",
+      "Concrete stairs and a walkway connecting the home to the street."
+    ],
+    "acompanamiento": "From idea to construction",
+    "procesoTitulo": "How we work",
+    "proceso": [
+      {
+        "titulo": "Tell us about your project",
+        "descripcion": "Share what you need and the project location to check availability."
+      },
+      {
+        "titulo": "We plan the details",
+        "descripcion": "We coordinate permits, materials, and staff according to the project’s needs."
+      },
+      {
+        "titulo": "We supervise the work",
+        "descripcion": "We oversee the work and stay in touch throughout the process."
+      }
+    ],
+    "conocerEquipo": "Get to know our company",
+    "verTestimonios": "Read all testimonials",
+    "coberturaTitulo": "Our service area",
+    "contactoTitulo": "Let’s talk about your next project",
+    "coberturaDescripcion": "We work in the United States. Contact us to check availability for your location and the service you need.",
+    "llamar": "Call us"
+  },
+  "formularios": {
+    "prueba": "Demo form: your information will not be sent.",
+    "validado": "Validation complete. This is a demo; no request has been sent."
+  }
+}

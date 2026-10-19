@@ -1,0 +1,27 @@
+.site-footer {
+  padding-block: 2.5rem;
+  background: @color-dark;
+  color: #fff;
+}
+.site-footer__grid {
+  display: grid;
+  gap: 2rem;
+}
+.site-footer h2 {
+  margin-bottom: 1rem;
+  color: @color-accent;
+  font-size: 1.1rem;
+}
+.site-footer a {
+  display: block;
+  width: fit-content;
+  padding-block: .4rem;
+  color: #fff;
+}
+.site-footer__copyright {
+  margin-top: 2rem;
+  font-size: .875rem;
+}
+@media (min-width: @breakpoint-tablet) {
+  .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

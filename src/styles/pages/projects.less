@@ -1,0 +1,14 @@
+.projects-list {
+  display: grid;
+  gap: 2rem;
+}
+.projects-list .project-card {
+  scroll-margin-top: 1rem;
+}
+.projects-list .project-card__body p {
+  white-space: pre-line;
+}
+@media (min-width: @breakpoint-tablet) {
+  .projects-list .project-card { display: grid; grid-template-columns: 1fr 1fr; }
+  .projects-list .project-card__image { height: 100%; min-height: 360px; }
+}

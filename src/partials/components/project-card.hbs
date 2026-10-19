@@ -1,0 +1,13 @@
+<article class="project-card" {{#unless preview}}id="proyecto-{{index}}"{{/unless}}>
+  <img class="project-card__image" src="{{asset image}}" alt="{{titulo}}" data-i18n="[alt]{{key}}.titulo" loading="lazy" width="640" height="420">
+  <div class="project-card__body">
+    {{#if preview}}
+      <h3 data-i18n="{{key}}.titulo">{{titulo}}</h3>
+      <p data-i18n="{{summaryKey}}">{{t summaryKey}}</p>
+      <a class="text-link" href="{{href}}" data-i18n="inicio.verProyecto">{{t "inicio.verProyecto"}}</a>
+    {{else}}
+      <h2 data-i18n="{{key}}.titulo">{{titulo}}</h2>
+      <p data-i18n="{{key}}.descripcion">{{descripcion}}</p>
+    {{/if}}
+  </div>
+</article>

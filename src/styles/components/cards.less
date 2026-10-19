@@ -1,0 +1,54 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.project-card, .testimonial-card, .service-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid @color-border;
+  border-radius: @radius-card;
+  background: @color-surface;
+  box-shadow: @shadow-card;
+}
+.project-card__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.52;
+  object-fit: cover;
+}
+.project-card__body {
+  padding: 1.5rem;
+}
+.project-card h2, .project-card h3 {
+  margin-bottom: .75rem;
+}
+.project-card .text-link {
+  margin-top: .75rem;
+}
+.testimonial-card {
+  padding: 1.5rem;
+  text-align: center;
+}
+.testimonial-card img {
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.testimonial-card blockquote {
+  font-style: italic;
+  color: @color-muted;
+}
+.testimonial-card__name {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+.testimonial-card__stars {
+  margin-top: .5rem;
+  color: #946800;
+  font-size: 1.5rem;
+  letter-spacing: .15em;
+}
+@media (min-width: @breakpoint-tablet) {
+  .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

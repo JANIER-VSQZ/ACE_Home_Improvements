@@ -1,54 +1,34 @@
-import { defineConfig } from "vite";
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
+import handlebars from 'vite-plugin-handlebars';
 import htmlPurge from 'vite-plugin-purgecss';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
-import handlebars from 'vite-plugin-handlebars';
-import path, {resolve} from 'node:path';
-import * as glob from 'glob';
+import getPageContext, { pages, translate, assetUrl } from './src/data/site.js';
 
-import getPageContext from './siteData';
+const root = fileURLToPath(new URL('.', import.meta.url));
 
-const obtenerEntradas = ()=> {
-    return Object.fromEntries(
-        [
-            ...glob.sync(
-                './**/*.html',
-                {
-                    ignore: [
-                        './dist/**',
-                        './node_modules/**'
-                    ]
-                }
-            ).map(
-                file => [
-                    file.slice(0, file.length - path.extname(file).length),
-                    resolve(__dirname, file)
-                ]
-            )
-        ]
-    );
-}
-
-export default defineConfig(
-    {
-        appType: 'mpa',
-        base: process.env.DEPLOY_BASE_URL,
-        build: {
-            rollupOptions: {
-                input: obtenerEntradas()
-            },
-            minify: true
-        },
-        plugins: [
-            handlebars({
-                partialDirectory: resolve(__dirname, 'partials'),
-                context: getPageContext
-            }),
-            htmlPurge({
-                // Public scripts toggle these classes after the HTML is built.
-                safelist: ['open', 'visible'],
-                dynamicAttributes: ['aria-pressed', 'aria-expanded'],
-            }),
-            ViteMinifyPlugin(),
-        ]
-    }
-);
+export default defineConfig({
+  appType: 'mpa',
+  base: process.env.DEPLOY_BASE_URL || '/',
+  build: {
+    rollupOptions: {
+      input: Object.fromEntries(pages.map(page => [page.id, root + page.file])),
+    },
+  },
+  plugins: [
+    handlebars({
+      partialDirectory: root + 'src/partials',
+      context: getPageContext,
+      helpers: {
+        t: translate,
+        asset: assetUrl,
+        concat: (...parts) => parts.slice(0, -1).join(''),
+      },
+    }),
+    htmlPurge({
+      safelist: ['is-open', 'is-active', 'is-invalid'],
+      dynamicAttributes: ['aria-pressed', 'aria-expanded', 'aria-selected'],
+    }),
+    ViteMinifyPlugin(),
+  ],
+});

@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="contact-bar">
+    <div class="container contact-bar__inner">
+      <span data-i18n="inicio.coberturaBreve">{{t "inicio.coberturaBreve"}}</span>
+      <div class="contact-bar__actions">
+        <a href="tel:+12019513723">201-951-3723</a>
+        <a class="button button--accent" href="cotizaciones.html" data-i18n="hero.solicitarCotizacion">{{t "hero.solicitarCotizacion"}}</a>
+      </div>
+    </div>
+  </div>
+  <nav class="navigation container" aria-label="{{t "comun.navegacion"}}" data-i18n="[aria-label]comun.navegacion" data-navigation>
+    <a class="navigation__brand" href="index.html" aria-label="{{t "menu.inicio"}}" data-i18n="[aria-label]menu.inicio">
+      <img src="{{asset "images/logo_ace.png"}}" width="56" height="56" alt="{{t "menu.logo"}}" data-i18n="[alt]menu.logo">
+      <span>ACE<br>Home Improvement</span>
+    </a>
+    <button class="navigation__toggle" type="button" data-menu-toggle aria-controls="primary-menu" aria-expanded="false" aria-label="{{t "menu.abrir"}}" data-i18n="[aria-label]menu.abrir">☰</button>
+    <ul class="navigation__menu" id="primary-menu" data-menu>
+      {{#each primaryNavigation}}
+        {{> components/navigation-link}}
+      {{/each}}
+      <li class="navigation__dropdown" data-dropdown>
+        <button class="navigation__dropdown-toggle" type="button" data-dropdown-toggle aria-expanded="false" aria-controls="secondary-menu" data-i18n="menu.informacion">{{t "menu.informacion"}}</button>
+        <ul class="navigation__submenu" id="secondary-menu">
+          {{#each secondaryNavigation}}
+            {{> components/navigation-link}}
+          {{/each}}
+        </ul>
+      </li>
+      <li class="language-switch">
+        <button type="button" data-language="es" lang="es" aria-label="Español">ES</button>
+        <button type="button" data-language="en" lang="en" aria-label="English">EN</button>
+      </li>
+    </ul>
+  </nav>
+</header>

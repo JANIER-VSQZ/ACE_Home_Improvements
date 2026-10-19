@@ -1,0 +1,264 @@
+{
+  "quotes": {
+    "id": "frmCotizacion",
+    "type": "quotes",
+    "submitKey": "cotizaciones.enviar",
+    "sections": [
+      {
+        "titleKey": "cotizaciones.secciones.0",
+        "fields": [
+          {
+            "id": "txtDimensiones",
+            "name": "Dimensiones",
+            "type": "text",
+            "required": true,
+            "inputmode": "decimal",
+            "labelKey": "cotizaciones.campos.Dimensiones.label",
+            "placeholderKey": "cotizaciones.campos.Dimensiones.placeholder",
+            "titleKey": "cotizaciones.campos.Dimensiones.title",
+            "isTextarea": false
+          },
+          {
+            "id": "unidadArea",
+            "name": "Unidad",
+            "isSelect": true,
+            "required": true,
+            "labelKey": "cotizaciones.unidad",
+            "options": [
+              {
+                "value": "ft2",
+                "labelKey": "cotizaciones.pies"
+              },
+              {
+                "value": "m2",
+                "labelKey": "cotizaciones.metros"
+              }
+            ]
+          },
+          {
+            "id": "txtCondicion",
+            "name": "Condicion",
+            "type": "text",
+            "required": true,
+            "labelKey": "cotizaciones.campos.Condicion.label",
+            "placeholderKey": "cotizaciones.campos.Condicion.placeholder",
+            "titleKey": "cotizaciones.campos.Condicion.title",
+            "isTextarea": false
+          },
+          {
+            "id": "txtUbicacion",
+            "name": "Ubicacion",
+            "type": "text",
+            "required": true,
+            "autocomplete": "address-level2",
+            "labelKey": "cotizaciones.campos.Ubicacion.label",
+            "placeholderKey": "cotizaciones.campos.Ubicacion.placeholder",
+            "titleKey": "cotizaciones.campos.Ubicacion.title",
+            "isTextarea": false
+          },
+          {
+            "id": "txtObservacion",
+            "name": "Observacion",
+            "type": "text",
+            "required": false,
+            "labelKey": "cotizaciones.campos.Observacion.label",
+            "placeholderKey": "cotizaciones.campos.Observacion.placeholder",
+            "titleKey": "cotizaciones.campos.Observacion.title",
+            "isTextarea": true
+          }
+        ]
+      },
+      {
+        "titleKey": "cotizaciones.secciones.1",
+        "fields": [
+          {
+            "id": "txtNombre",
+            "name": "Nombre",
+            "type": "text",
+            "required": true,
+            "autocomplete": "given-name",
+            "labelKey": "cotizaciones.campos.Nombre.label",
+            "placeholderKey": "cotizaciones.campos.Nombre.placeholder",
+            "titleKey": "cotizaciones.campos.Nombre.title",
+            "isTextarea": false
+          },
+          {
+            "id": "txtApellido",
+            "name": "Apellido",
+            "type": "text",
+            "required": true,
+            "autocomplete": "family-name",
+            "labelKey": "cotizaciones.campos.Apellido.label",
+            "placeholderKey": "cotizaciones.campos.Apellido.placeholder",
+            "titleKey": "cotizaciones.campos.Apellido.title",
+            "isTextarea": false
+          },
+          {
+            "id": "txtCorreo",
+            "name": "Correo",
+            "type": "email",
+            "required": true,
+            "autocomplete": "email",
+            "labelKey": "cotizaciones.campos.Correo.label",
+            "placeholderKey": "cotizaciones.campos.Correo.placeholder",
+            "titleKey": "cotizaciones.campos.Correo.title",
+            "isTextarea": false
+          },
+          {
+            "id": "txtTelefono",
+            "name": "Telefono",
+            "type": "tel",
+            "required": true,
+            "autocomplete": "tel",
+            "labelKey": "cotizaciones.campos.Telefono.label",
+            "placeholderKey": "cotizaciones.campos.Telefono.placeholder",
+            "titleKey": "cotizaciones.campos.Telefono.title",
+            "isTextarea": false
+          }
+        ]
+      }
+    ]
+  },
+  "jobs": {
+    "id": "jobForm",
+    "type": "jobs",
+    "submitKey": "empleos.aplicar",
+    "sections": [
+      {
+        "fields": [
+          {
+            "id": "puesto",
+            "name": "puesto",
+            "isSelect": true,
+            "required": true,
+            "labelKey": "empleos.puesto",
+            "options": [
+              {
+                "value": "",
+                "labelKey": "empleos.seleccionar"
+              },
+              {
+                "value": "0",
+                "labelKey": "empleos.items.0.plaza"
+              },
+              {
+                "value": "1",
+                "labelKey": "empleos.items.1.plaza"
+              },
+              {
+                "value": "2",
+                "labelKey": "empleos.items.2.plaza"
+              },
+              {
+                "value": "3",
+                "labelKey": "empleos.items.3.plaza"
+              },
+              {
+                "value": "4",
+                "labelKey": "empleos.items.4.plaza"
+              },
+              {
+                "value": "5",
+                "labelKey": "empleos.items.5.plaza"
+              },
+              {
+                "value": "6",
+                "labelKey": "empleos.items.6.plaza"
+              },
+              {
+                "value": "7",
+                "labelKey": "empleos.items.7.plaza"
+              },
+              {
+                "value": "8",
+                "labelKey": "empleos.items.8.plaza"
+              },
+              {
+                "value": "9",
+                "labelKey": "empleos.items.9.plaza"
+              },
+              {
+                "value": "10",
+                "labelKey": "empleos.items.10.plaza"
+              },
+              {
+                "value": "11",
+                "labelKey": "empleos.items.11.plaza"
+              },
+              {
+                "value": "12",
+                "labelKey": "empleos.items.12.plaza"
+              },
+              {
+                "value": "13",
+                "labelKey": "empleos.items.13.plaza"
+              },
+              {
+                "value": "14",
+                "labelKey": "empleos.items.14.plaza"
+              }
+            ]
+          },
+          {
+            "id": "name",
+            "name": "nombre",
+            "type": "text",
+            "labelKey": "empleos.nombre",
+            "autocomplete": "name",
+            "required": true
+          },
+          {
+            "id": "email",
+            "name": "email",
+            "type": "email",
+            "labelKey": "empleos.email",
+            "autocomplete": "email",
+            "required": true
+          },
+          {
+            "id": "phone",
+            "name": "telefono",
+            "type": "tel",
+            "labelKey": "empleos.telefono",
+            "autocomplete": "tel",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "id": "contactForm",
+    "type": "contact",
+    "submitKey": "contacto.boton",
+    "sections": [
+      {
+        "fields": [
+          {
+            "id": "nombre",
+            "name": "nombre",
+            "type": "text",
+            "labelKey": "contacto.labelNombre",
+            "autocomplete": "name",
+            "required": true
+          },
+          {
+            "id": "correo",
+            "name": "correo",
+            "type": "email",
+            "labelKey": "contacto.labelCorreo",
+            "autocomplete": "email",
+            "required": true
+          },
+          {
+            "id": "mensaje",
+            "name": "mensaje",
+            "isTextarea": true,
+            "required": true,
+            "labelKey": "contacto.labelMensaje"
+          }
+        ]
+      }
+    ]
+  }
+}

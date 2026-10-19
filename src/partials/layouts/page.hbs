@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {{> layouts/head}}
+  </head>
+  <body data-page="{{page.id}}">
+    <a class="skip-link" href="#main-content" data-i18n="comun.saltarContenido">{{t "comun.saltarContenido"}}</a>
+    {{> layouts/header}}
+    <main id="main-content" class="site-main page-{{page.id}}" tabindex="-1">
+      {{> @partial-block}}
+    </main>
+    {{> layouts/footer}}
+  </body>
+</html>

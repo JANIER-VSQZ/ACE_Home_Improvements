@@ -1,0 +1,157 @@
+{
+  "hero": [
+    "images/roof1.jpg",
+    "images/roof2.jpg",
+    "images/roof3.jpg"
+  ],
+  "services": [
+    {
+      "image": "images/techoAsfaltoServ.jpg",
+      "name": "Techos de asfalto"
+    },
+    {
+      "image": "images/techoMetalicoServ.jpg",
+      "name": "Techos metalicos"
+    },
+    {
+      "image": "images/sidingServ.jpg",
+      "name": "Siding"
+    },
+    {
+      "image": "images/chimeneaServ.jpg",
+      "name": "Chimeneas"
+    },
+    {
+      "image": "images/concretoExteriorServ.jpg",
+      "name": "Concreto exterior"
+    },
+    {
+      "image": "images/framingServ.jpg",
+      "name": "Framing"
+    },
+    {
+      "image": "images/escalerasServ.jpg",
+      "name": "Escaleras"
+    }
+  ],
+  "projects": [
+    {
+      "image": "/images/destaca1.jpg"
+    },
+    {
+      "image": "/images/destaca2.jpg"
+    },
+    {
+      "image": "/images/destaca3.jpg"
+    }
+  ],
+  "jobs": [
+    {
+      "city": "Bridgewater, NJ"
+    },
+    {
+      "city": "Englewood Cliffs, NJ"
+    },
+    {
+      "city": "Fort Lee, NJ"
+    },
+    {
+      "city": "Livingston, NJ"
+    },
+    {
+      "city": "Union, NJ"
+    },
+    {
+      "city": "Mendham, NJ"
+    },
+    {
+      "city": "Flemington, NJ"
+    },
+    {
+      "city": "Somerset, NJ"
+    },
+    {
+      "city": "Linden, NJ"
+    },
+    {
+      "city": "Clark, NJ"
+    },
+    {
+      "city": "Edison, NJ"
+    },
+    {
+      "city": "Avenel, NJ"
+    },
+    {
+      "city": "Cranford, NJ"
+    },
+    {
+      "city": "Fords, NJ"
+    },
+    {
+      "city": "Union, NJ"
+    }
+  ],
+  "testimonials": [
+    {
+      "image": "images/mujer1.jpg",
+      "name": "Ana Martínez",
+      "stars": "★★★★★"
+    },
+    {
+      "image": "images/hombre1.jpeg",
+      "name": "Carlos López",
+      "stars": "★★★★"
+    },
+    {
+      "image": "images/mujer2.jpg",
+      "name": "Lucía Rivas",
+      "stars": "★★★"
+    },
+    {
+      "image": "images/hombre2.jpg",
+      "name": "Pedro Aguilar",
+      "stars": "★★★★★"
+    },
+    {
+      "image": "images/mujer3.jpg",
+      "name": "Mariela Cruz",
+      "stars": "★★★★★"
+    },
+    {
+      "image": "images/hombre3.jpeg",
+      "name": "José Ramírez",
+      "stars": "★★★★"
+    },
+    {
+      "image": "images/hombre4.jpeg",
+      "name": "Noel Barahona",
+      "stars": "★★★★★"
+    },
+    {
+      "image": "images/señora4.jpg",
+      "name": "Olga Benitez",
+      "stars": "★★★★"
+    }
+  ],
+  "gallery": {
+    "work": [
+      "/images/a6.jpg",
+      "/images/a7.jpg",
+      "/images/a8.jpg",
+      "/images/a9.jpg",
+      "/images/ace1.png",
+      "/images/ace2.png",
+      "/images/ace3.png",
+      "/images/ace4.png"
+    ],
+    "tools": [
+      "/images/h1.webp",
+      "/images/h2.jpg",
+      "/images/h3.jpg",
+      "/images/h5.png",
+      "/images/h6.png",
+      "/images/h7.png"
+    ]
+  }
+}

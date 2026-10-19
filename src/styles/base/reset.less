@@ -1,0 +1,43 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body, h1, h2, h3, p, figure, blockquote, ul {
+  margin: 0;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button, input, select, textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+[hidden] {
+  display: none !important;
+}
+:focus-visible {
+  outline: 3px solid @color-accent;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

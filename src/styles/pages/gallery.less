@@ -1,0 +1,28 @@
+.gallery-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+.gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.gallery-card {
+  overflow: hidden;
+  border-radius: @radius-card;
+  background: @color-surface;
+  border: 1px solid @color-border;
+}
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.gallery-card figcaption {
+  padding: 1.25rem;
+}
+@media (min-width: @breakpoint-tablet) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

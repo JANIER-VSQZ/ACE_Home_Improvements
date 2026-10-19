@@ -1,0 +1,19 @@
+.page-quotes .form-panel {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+@media (min-width: @breakpoint-tablet) {
+  .form--quotes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .form--quotes > .form__notice,
+  .form--quotes > .form__status,
+  .form--quotes > .button {
+    grid-column: 1 / -1;
+  }
+  .form--quotes > .button {
+    justify-self: start;
+  }
+}

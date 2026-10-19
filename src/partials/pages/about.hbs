@@ -1,0 +1,16 @@
+<section class="section container">
+  {{> components/page-heading}}
+  <div class="about-layout">
+    <div class="carousel about-layout__images" data-carousel>
+      <img class="carousel__slide is-active" src="{{asset "images/nosotros.png"}}" alt="{{t "acercaNosotros.imagenes.0"}}" data-i18n="[alt]acercaNosotros.imagenes.0" width="640" height="480">
+      <img class="carousel__slide" src="{{asset "images/nosotros2.png"}}" alt="{{t "acercaNosotros.imagenes.1"}}" data-i18n="[alt]acercaNosotros.imagenes.1" width="640" height="480">
+      <img class="carousel__slide" src="{{asset "images/nosotros3.png"}}" alt="{{t "acercaNosotros.imagenes.2"}}" data-i18n="[alt]acercaNosotros.imagenes.2" width="640" height="480">
+    </div>
+    <div class="about-layout__body">
+      <p class="eyebrow" data-i18n="acercaNosotros.subtitulo">{{t "acercaNosotros.subtitulo"}}</p>
+      <p data-i18n="acercaNosotros.descripcion1">{{t "acercaNosotros.descripcion1"}}</p>
+      <p data-i18n="acercaNosotros.descripcion2">{{t "acercaNosotros.descripcion2"}}</p>
+      <a class="button" href="preguntasFrecuentes.html" data-i18n="acercaNosotros.boton">{{t "acercaNosotros.boton"}}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<section class="section container">
+  {{> components/page-heading}}
+  <div class="faq-layout">
+    <aside class="faq-info">
+      <div class="faq-benefit">
+        <img src="{{asset "images/icon_fast.png"}}" width="40" height="40" alt="">
+        <div>
+          <h2 data-i18n="faq.disponibilidadTitulo">{{t "faq.disponibilidadTitulo"}}</h2>
+          <p data-i18n="faq.disponibilidadDescripcion">{{t "faq.disponibilidadDescripcion"}}</p>
+        </div>
+      </div>
+      <div class="faq-benefit">
+        <img src="{{asset "images/icon_plus.png"}}" width="40" height="40" alt="">
+        <div>
+          <h2 data-i18n="faq.preciosTitulo">{{t "faq.preciosTitulo"}}</h2>
+          <p data-i18n="faq.preciosDescripcion">{{t "faq.preciosDescripcion"}}</p>
+        </div>
+      </div>
+      <div class="faq-benefit">
+        <img src="{{asset "images/icon_team.png"}}" width="40" height="40" alt="">
+        <div>
+          <h2 data-i18n="faq.equipoTitulo">{{t "faq.equipoTitulo"}}</h2>
+          <p data-i18n="faq.equipoDescripcion">{{t "faq.equipoDescripcion"}}</p>
+        </div>
+      </div>
+      <a class="text-link" href="contactenos.html" data-i18n="faq.masPreguntas">{{t "faq.masPreguntas"}}</a>
+    </aside>
+    <div>
+      <label class="sr-only" for="faq-search" data-i18n="faq.buscar">{{t "faq.buscar"}}</label>
+      <input
+        class="faq-search"
+        id="faq-search"
+        type="search"
+        data-i18n="[placeholder]faq.buscar"
+        placeholder="{{t "faq.buscar"}}"
+      >
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+.about-layout {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+}
+.about-layout__images {
+  aspect-ratio: 4 / 3;
+  border-radius: @radius-card;
+}
+.about-layout__body .button {
+  margin-top: 1.5rem;
+}
+@media (min-width: @breakpoint-tablet) {
+  .about-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -1,0 +1,20 @@
+.jobs-layout {
+  display: grid;
+  align-items: start;
+  gap: 2rem;
+}
+.job-details {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: @radius-card;
+  background: @color-dark;
+  color: #fff;
+}
+.job-details h2 {
+  margin-bottom: 1rem;
+}
+.job-details h3, .job-details p {
+  margin-bottom: .75rem;
+}
+@media (min-width: @breakpoint-tablet) {
+  .jobs-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

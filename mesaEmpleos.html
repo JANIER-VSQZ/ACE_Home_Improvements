@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="less/principal.less">
-        <script type="module" src="/menu.js"></script>
-        <script type="module" src="./js/validarForm.js"></script>
-        <script type="module" src="./js/i18n.js"></script>
-        <title data-i18n="paginas.empleos">Mesa de Empleos</title>
-    </head>
-    <body>
-        {{>header menu_6="true"}}
-        {{>mesasEmpleos mesas=datosMesaEmpleos}}
-        {{>footer}}
-    </body>
-</html>
+{{#> layouts/page}}
+  {{> pages/jobs}}
+{{/layouts/page}}

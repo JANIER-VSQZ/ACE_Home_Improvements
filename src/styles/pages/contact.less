@@ -1,0 +1,26 @@
+.contact-layout {
+  display: grid;
+  align-items: start;
+  gap: 2rem;
+}
+.contact-layout__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 1.5rem;
+  border-radius: @radius-card;
+  object-fit: cover;
+}
+.contact-list {
+  display: grid;
+  gap: .5rem;
+  margin-block: 1rem;
+}
+.contact-list a {
+  display: inline-block;
+  padding-block: .35rem;
+  font-weight: 600;
+}
+@media (min-width: @breakpoint-tablet) {
+  .contact-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

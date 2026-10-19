@@ -1,0 +1,22 @@
+<section class="section container">
+  {{> components/page-heading}}
+  <div class="jobs-layout">
+    <section class="job-details" aria-live="polite">
+      <h2 data-i18n="empleos.detalles">{{t "empleos.detalles"}}</h2>
+      <p data-job-placeholder data-i18n="empleos.indicacion">{{t "empleos.indicacion"}}</p>
+      {{#each jobs}}
+        <div data-job-details="{{index}}" hidden>
+          <h3 data-i18n="{{key}}.plaza">{{plaza}}</h3>
+          <p><strong data-i18n="empleos.ubicacion">{{t "empleos.ubicacion"}}</strong> {{city}}</p>
+          <p><strong data-i18n="empleos.tipoContrato">{{t "empleos.tipoContrato"}}</strong> <span data-i18n="{{key}}.tipoContrato">{{tipoContrato}}</span></p>
+          <p><strong data-i18n="empleos.descripcionPuesto">{{t "empleos.descripcionPuesto"}}</strong></p>
+          <p data-i18n="{{key}}.descripcionPuesto">{{descripcionPuesto}}</p>
+        </div>
+      {{/each}}
+    </section>
+    <section class="form-panel">
+      <h2 data-i18n="empleos.formulario">{{t "empleos.formulario"}}</h2>
+      {{> forms/form forms.jobs}}
+    </section>
+  </div>
+</section>

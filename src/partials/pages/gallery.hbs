@@ -1,0 +1,18 @@
+<section class="section container">
+  {{> components/page-heading}}
+  <div class="gallery-tabs" role="tablist" aria-label="{{t "galeria.titulo"}}" data-i18n="[aria-label]galeria.titulo">
+    {{#each gallery}}
+      <button class="button button--secondary" id="tab-{{id}}" type="button" role="tab" data-gallery-tab="{{id}}" aria-controls="gallery-{{id}}" aria-selected="{{#if hidden}}false{{else}}true{{/if}}" tabindex="{{#if hidden}}-1{{else}}0{{/if}}" data-i18n="{{labelKey}}">{{t labelKey}}</button>
+    {{/each}}
+  </div>
+  {{#each gallery}}
+    <div class="gallery-grid" id="gallery-{{id}}" role="tabpanel" aria-labelledby="tab-{{id}}" tabindex="0" data-gallery-panel="{{id}}" {{#if hidden}}hidden{{/if}}>
+      {{#each images}}
+        <figure class="gallery-card">
+          <img src="{{asset image}}" alt="{{t key}}" data-i18n="[alt]{{key}}" loading="lazy" width="640" height="480">
+          <figcaption data-i18n="{{key}}">{{t key}}</figcaption>
+        </figure>
+      {{/each}}
+    </div>
+  {{/each}}
+</section>

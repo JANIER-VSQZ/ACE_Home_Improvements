@@ -1,0 +1,38 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 44px;
+  padding: .8rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: @radius-small;
+  background: @color-primary;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+.button:hover {
+  background: @color-primary-dark;
+  color: #fff;
+}
+.button--accent {
+  background: @color-accent;
+  color: @color-darkest;
+}
+.button--accent:hover {
+  background: darken(@color-accent, 8%);
+  color: @color-darkest;
+}
+.button--secondary {
+  background: @color-surface;
+  color: @color-primary-dark;
+  border-color: @color-border;
+}
+.button--secondary:hover, .button--secondary[aria-selected="true"] {
+  background: @color-primary-dark;
+  color: #fff;
+}

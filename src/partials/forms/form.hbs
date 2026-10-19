@@ -1,0 +1,14 @@
+<form id="{{id}}" class="form form--{{type}}" method="post" data-form-type="{{type}}" data-demo-form novalidate>
+  {{> forms/demo-notice}}
+  {{#each sections}}
+    <fieldset class="form__section">
+      {{#if titleKey}}<legend data-i18n="{{titleKey}}">{{t titleKey}}</legend>{{/if}}
+      <div class="form__fields">
+        {{#each fields}}
+          {{> forms/field}}
+        {{/each}}
+      </div>
+    </fieldset>
+  {{/each}}
+  <button class="button" type="submit" data-i18n="{{submitKey}}">{{t submitKey}}</button>
+</form>
