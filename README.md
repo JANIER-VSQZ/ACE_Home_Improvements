@@ -114,4 +114,6 @@ Los carruseles cambian cada tres segundos. La portada utiliza `carousel--slide` 
 
 ## Publicación
 
-`npm run build` genera `dist`. Vite usa `DEPLOY_BASE_URL` cuando se publica en una subcarpeta, por ejemplo `/ace/`. Las imágenes se resuelven con el helper `asset`, y los enlaces entre páginas conservan sus nombres originales.
+`npm run build` genera `dist` con rutas relativas para que los estilos y las imágenes funcionen desde la raíz o desde una subcarpeta. Si defines `DEPLOY_BASE_URL`, por ejemplo `/ace/`, se usa esa ruta explícita. Las imágenes se resuelven con el helper `asset`, y los enlaces entre páginas conservan sus nombres originales.
+
+Para revisar el compilado localmente, ejecuta `npm run preview` y abre la dirección que muestra Vite, normalmente `http://localhost:4173`. Sirve toda la carpeta `dist`, incluidos `assets` e `images`. Abrir el archivo HTML con doble clic no permite ejecutar correctamente los módulos JavaScript del sitio.

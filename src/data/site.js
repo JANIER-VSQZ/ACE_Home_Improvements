@@ -22,7 +22,7 @@ export function translate(key) {
 }
 
 export function assetUrl(path) {
-  const base = process.env.DEPLOY_BASE_URL || '/';
+  const base = process.env.DEPLOY_BASE_URL || './';
   return base.replace(/\/?$/, '/') + path.replace(/^\//, '');
 }
 

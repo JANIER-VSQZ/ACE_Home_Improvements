@@ -9,7 +9,7 @@ const root = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   appType: 'mpa',
-  base: process.env.DEPLOY_BASE_URL || '/',
+  base: process.env.DEPLOY_BASE_URL || './',
   build: {
     rollupOptions: {
       input: Object.fromEntries(pages.map(page => [page.id, root + page.file])),
