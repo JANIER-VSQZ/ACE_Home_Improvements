@@ -1,4 +1,4 @@
-<article class="project-card" {{#unless preview}}id="proyecto-{{index}}"{{/unless}}>
+<article class="project-card" {{#unless preview}}id="proyecto-{{index}}" data-scroll-reveal="right" data-reveal-repeat{{/unless}}>
   <img class="project-card__image" src="{{asset image}}" alt="{{titulo}}" data-i18n="[alt]{{key}}.titulo" loading="lazy" width="640" height="420">
   <div class="project-card__body">
     {{#if preview}}

@@ -1,0 +1,18 @@
+.scroll-reveal {
+  --reveal-offset: 3rem;
+  opacity: 0;
+}
+.scroll-reveal--left {
+  --reveal-offset: -3rem;
+}
+.scroll-reveal.is-reveal-visible {
+  opacity: 1;
+  animation: scroll-reveal-enter .8s ease backwards;
+}
+@keyframes scroll-reveal-enter {
+  from { opacity: 0; transform: translateX(var(--reveal-offset)); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal { opacity: 1; animation: none; }
+}

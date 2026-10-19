@@ -214,6 +214,40 @@ try {
 
   await navigate('servicios.html', 'en', '&SRV=Techos%20de%20asfalto');
   assert.equal(await evaluate("document.activeElement.dataset.serviceName"), 'Techos de asfalto');
+
+  await viewport(1440);
+  await navigate('servicios.html');
+  await evaluate("document.documentElement.style.scrollBehavior = 'auto'");
+  await until("document.querySelector('[data-scroll-reveal]').classList.contains('is-reveal-visible')");
+  assert.equal(await evaluate("document.querySelector('[data-scroll-reveal]').classList.contains('scroll-reveal--left')"), true);
+  await evaluate("document.querySelectorAll('[data-scroll-reveal]')[6].scrollIntoView({ block: 'center', behavior: 'instant' })");
+  await until("document.querySelectorAll('[data-scroll-reveal]')[6].classList.contains('is-reveal-visible')");
+  assert.equal(await evaluate("getComputedStyle(document.querySelectorAll('[data-scroll-reveal]')[6]).animationName"), 'scroll-reveal-enter');
+  await evaluate('window.scrollTo(0, 0)');
+  await until("document.querySelectorAll('[data-scroll-reveal]')[6].getBoundingClientRect().top > innerHeight");
+  assert.equal(await evaluate("document.querySelectorAll('[data-scroll-reveal]')[6].classList.contains('is-reveal-visible')"), true);
+
+  await navigate('proyectosDestacados.html');
+  await evaluate("document.documentElement.style.scrollBehavior = 'auto'");
+  await until("document.querySelector('[data-reveal-repeat]').classList.contains('is-reveal-visible')");
+  await evaluate("document.querySelectorAll('[data-reveal-repeat]')[2].scrollIntoView({ block: 'center', behavior: 'instant' })");
+  await until("!document.querySelector('[data-reveal-repeat]').classList.contains('is-reveal-visible')");
+  await evaluate('window.scrollTo(0, 0)');
+  await until("document.querySelector('[data-reveal-repeat]').classList.contains('is-reveal-visible')");
+  await command('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+  await until("document.querySelectorAll('.scroll-reveal').length === 0");
+  assert.equal(await evaluate("getComputedStyle(document.querySelector('[data-reveal-repeat]')).opacity"), '1');
+  await command('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] });
+
+  for (const file of ['index.html', 'acercaNosotros.html']) {
+    await navigate(file);
+    const initial = await evaluate("[...document.querySelectorAll('.carousel__slide')].findIndex(slide => slide.classList.contains('is-active'))");
+    await until("[...document.querySelectorAll('.carousel__slide')].findIndex(slide => slide.classList.contains('is-active')) !== " + initial);
+    assert.equal(await evaluate("document.querySelector('[data-carousel]').classList.contains('carousel--slide')"), file === 'index.html');
+    await until("document.querySelectorAll('.is-leaving').length === 0");
+  }
+  console.log('PASS alternating service reveals, repeated project reveals, reduced motion and both three-second carousels.');
+
   assert.equal(requests.filter(request => request.method !== 'GET').length, 0, 'Demo forms sent a request');
   assert.deepEqual(missingResources, [], 'Missing local resources');
   assert.deepEqual(exceptions, [], 'Browser exceptions');

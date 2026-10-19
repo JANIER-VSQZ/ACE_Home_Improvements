@@ -2,6 +2,7 @@ import '../styles/main.less';
 import { ready, initTranslations } from './core/i18n.js';
 import { initNavigation } from './components/navigation.js';
 import { initCarousel } from './components/carousel.js';
+import { initScrollReveal } from './components/scroll-reveal.js';
 import { initForms } from './forms/index.js';
 import { initFaq } from './pages/faq.js';
 import { initGallery } from './pages/gallery.js';
@@ -16,6 +17,7 @@ Promise.all([ready, domReady]).then(() => {
   initTranslations();
   initNavigation();
   initCarousel();
+  initScrollReveal();
   initForms();
   const pages = { faq: initFaq, gallery: initGallery, jobs: initJobs, services: initServices };
   pages[document.body.dataset.page]?.();

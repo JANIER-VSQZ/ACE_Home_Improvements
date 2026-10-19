@@ -97,6 +97,12 @@ Los mensajes se traducen, aparecen debajo del campo, se enlazan mediante `aria-d
 
 Para implementar envíos reales en el futuro, sustituye el controlador de demostración en `src/scripts/forms/index.js` por una integración con un servidor. Nunca incluyas credenciales en el código del navegador.
 
+## Efectos y animaciones
+
+`src/scripts/components/scroll-reveal.js` anima las tarjetas con `data-scroll-reveal="left"` o `"right"` al entrar en pantalla. El atributo `data-reveal-repeat` permite repetir la entrada al volver a desplazarse hasta el elemento. Los estilos están en `src/styles/components/motion.less`.
+
+Los carruseles cambian cada tres segundos. La portada utiliza `carousel--slide` para el desplazamiento horizontal y Acerca de Nosotros conserva el fundido. Las animaciones de entrada y el avance automático respetan la preferencia de movimiento reducido. Los carruseles se pausan al pasar el cursor o al cambiar de pestaña.
+
 ## Añadir una página
 
 1. Registra su archivo, identificador y claves de título en `src/data/site.js`.

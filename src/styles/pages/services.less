@@ -1,6 +1,11 @@
 .services-list {
+  overflow-x: clip;
   display: grid;
   gap: 2rem;
+}
+@media (hover: hover) {
+  .service-card { transition: transform .25s ease, box-shadow .25s ease; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0, 0, 0, .16); }
 }
 .service-card > img {
   width: 100%;

@@ -39,6 +39,7 @@ export default function getPageContext(pathname) {
   }));
   const services = assets.services.map((entry, index) => ({
     ...spanish.servicios[index], ...entry, key: 'servicios.' + index,
+    revealDirection: index % 2 === 0 ? 'left' : 'right',
     detailsHref: 'servicios.html?SRV=' + encodeURIComponent(entry.name),
     quoteHref: 'cotizaciones.html?boton=' + encodeURIComponent(entry.name),
   }));

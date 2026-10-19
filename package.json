@@ -15,8 +15,6 @@
     "vite": "^7.3.0"
   },
   "dependencies": {
-    "glob": "^11.0.3",
-    "handlebars-i18n": "^1.10.2",
     "i18next": "^25.7.3",
     "i18next-browser-languagedetector": "^8.2.0",
     "less": "^4.4.0",
