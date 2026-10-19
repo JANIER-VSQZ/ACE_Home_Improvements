@@ -1,41 +1,86 @@
-import { t, localizedUrl } from './i18n.js';
+import { t } from './i18n.js';
+import './formulariosDemo.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.job-card__form').forEach((form) => {
-        const nombre = form.elements.namedItem('nombre');
-        const correo = form.elements.namedItem('email');
-        const telefono = form.elements.namedItem('telefono');
+    const form = document.getElementById('jobForm');
+    if (!form) return;
 
-        function mostrarError(input, key) {
-            input.dataset.validationKey = key;
-            input.setCustomValidity(key ? t(key) : '');
-        }
+    const puesto = form.elements.namedItem('puesto');
+    const campos = [
+        { campo: puesto, requerido: 'puestoEmpleo' },
+        {
+            campo: form.elements.namedItem('nombre'),
+            requerido: 'nombreEmpleo',
+            patron: /^\p{L}+(?:[ '’-]\p{L}+)*$/u,
+            invalido: 'nombreCompletoInvalido',
+        },
+        {
+            campo: form.elements.namedItem('email'),
+            requerido: 'correoRequeridoEmpleo',
+            patron: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            invalido: 'correoEmpleo',
+        },
+        {
+            campo: form.elements.namedItem('telefono'),
+            requerido: 'telefonoRequeridoEmpleo',
+            patron: /^\d{10}$/,
+            invalido: 'telefonoEmpleo',
+        },
+    ];
 
-        nombre.addEventListener('input', () => {
-            nombre.value = nombre.value.replace(/[^\p{L}\s]/gu, '');
-            mostrarError(nombre, '');
+    function mostrarPuesto() {
+        document.querySelectorAll('[data-job-details]').forEach((detalle) => {
+            detalle.hidden = detalle.dataset.jobDetails !== puesto.value;
         });
-        telefono.addEventListener('input', () => {
-            telefono.value = telefono.value.replace(/[^0-9]/g, '');
-            mostrarError(telefono, '');
-        });
-        correo.addEventListener('input', () => mostrarError(correo, ''));
+        document.querySelector('[data-job-placeholder]').hidden = puesto.value !== '';
+    }
 
-        document.addEventListener('languageChanged', () => {
-            [nombre, correo, telefono].forEach((input) => {
-                if (input.dataset.validationKey) mostrarError(input, input.dataset.validationKey);
-            });
-        });
+    function limpiarError(campo) {
+        form.querySelector(`#${campo.id}Error`)?.remove();
+        campo.classList.remove('error');
+        campo.removeAttribute('aria-invalid');
+        campo.removeAttribute('aria-describedby');
+    }
 
-        form.addEventListener('submit', (event) => {
+    function validarCampo({ campo, requerido, patron, invalido }) {
+        limpiarError(campo);
+        const valor = campo.value.trim();
+        let key;
+        if (!valor) key = `validacion.${requerido}`;
+        else if (patron && (!patron.test(valor) || campo.validity.typeMismatch)) key = `validacion.${invalido}`;
+        if (!key) return true;
+
+        const mensaje = document.createElement('div');
+        mensaje.id = `${campo.id}Error`;
+        mensaje.className = 'error-message';
+        mensaje.dataset.validationError = '';
+        mensaje.dataset.i18n = key;
+        mensaje.textContent = t(key);
+        campo.parentElement.appendChild(mensaje);
+        campo.classList.add('error');
+        campo.setAttribute('aria-invalid', 'true');
+        campo.setAttribute('aria-describedby', mensaje.id);
+        return false;
+    }
+
+    campos.forEach((regla) => {
+        regla.campo.addEventListener(regla.campo === puesto ? 'change' : 'input', () => {
+            if (regla.campo.getAttribute('aria-invalid') === 'true') validarCampo(regla);
+            form.querySelector('[data-demo-status]').hidden = true;
+        });
+    });
+
+    puesto.addEventListener('change', mostrarPuesto);
+    mostrarPuesto();
+
+    form.addEventListener('submit', (event) => {
+        let primerError;
+        campos.forEach((regla) => {
+            if (!validarCampo(regla)) primerError ||= regla.campo;
+        });
+        if (primerError) {
             event.preventDefault();
-            mostrarError(nombre, nombre.value.trim() ? '' : 'validacion.nombreEmpleo');
-            mostrarError(correo, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value.trim()) ? '' : 'validacion.correoEmpleo');
-            mostrarError(telefono, /^\d{10}$/.test(telefono.value.trim()) ? '' : 'validacion.telefonoEmpleo');
-
-            if (form.reportValidity() && window.confirm(t('empleos.enviado'))) {
-                window.location.href = localizedUrl('index.html');
-            }
-        });
+            primerError.focus();
+        }
     });
 });

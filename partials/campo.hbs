@@ -4,8 +4,19 @@
     <label for="{{id}}" data-i18n="cotizaciones.campos.{{name}}.label">{{label}}</label>
     {{/if}}
 
-    <input type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}" title="{{title}}" data-i18n="[placeholder]cotizaciones.campos.{{name}}.placeholder;[title]cotizaciones.campos.{{name}}.title" {{#if
-        required}}required{{/if}}>
+    {{#if multilinea}}
+    <textarea id="{{id}}" name="{{name}}" rows="3" placeholder="{{placeholder}}" title="{{title}}" data-i18n="[placeholder]cotizaciones.campos.{{name}}.placeholder;[title]cotizaciones.campos.{{name}}.title" {{#if required}}required{{/if}}></textarea>
+    {{else}}
+    <input type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}" title="{{title}}" data-i18n="[placeholder]cotizaciones.campos.{{name}}.placeholder;[title]cotizaciones.campos.{{name}}.title" {{#if inputmode}}inputmode="{{inputmode}}"{{/if}} {{#if autocomplete}}autocomplete="{{autocomplete}}"{{/if}} {{#if required}}required{{/if}}>
+    {{/if}}
+
+    {{#if unidades}}
+    <label for="unidadArea" data-i18n="cotizaciones.unidad">Unidad del área</label>
+    <select id="unidadArea" name="Unidad" required>
+        <option value="ft2" data-i18n="cotizaciones.pies">Pies cuadrados (ft²)</option>
+        <option value="m2" data-i18n="cotizaciones.metros">Metros cuadrados (m²)</option>
+    </select>
+    {{/if}}
 
     {{#if boton}}
     <button type="submit" data-i18n="cotizaciones.enviar">{{boton}}</button>

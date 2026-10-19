@@ -1,5 +1,6 @@
 
-<form id="{{frmId}}" action="{{formAction}}" method="get" novalidate>
+<form id="{{frmId}}" method="post" data-demo-form novalidate>
+    {{>avisoDemo}}
 
     {{#each secciones}}
         {{> seccion this}}

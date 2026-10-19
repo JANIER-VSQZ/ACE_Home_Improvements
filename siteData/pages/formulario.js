@@ -8,12 +8,14 @@ export default {
                 descripcionSeccion: "Informacion general del servicio",
                 campos: [
                     {
-                        label: "Area del lugar",
+                        label: "Área aproximada",
                         id: "txtDimensiones",
                         type: "Text",
                         name: "Dimensiones",
-                        placeholder: "Area superficial.",
-                        title: "El area del lugar donde se realizara el trabajo.",
+                        placeholder: "Ej. 120.5",
+                        title: "Indica el área aproximada y selecciona la unidad.",
+                        inputmode: "decimal",
+                        unidades: true,
                         required: true
                     },
                     {
@@ -26,22 +28,24 @@ export default {
                         required: true
                     },
                     {
-                        label: "Ubicacion Exacta",
+                        label: "Ciudad o código postal",
                         id: "txtUbicacion",
                         type: "Text",
                         name: "Ubicacion",
-                        placeholder: "Ubicacion de la residencia.",
-                        title: "Ubicacion exacta del lugar donde se hara el trabajo.",
+                        placeholder: "Ciudad o código postal del proyecto.",
+                        title: "Para consultar disponibilidad en tu zona.",
+                        autocomplete: "address-level2",
                         required: true
                     },
                     {
-                        label: "Observaciones",
+                        label: "Observaciones (opcional)",
                         id: "txtObservacion",
                         type: "Text",
                         name: "Observacion",
                         placeholder: "Detalles importantes.",
                         title: "Detalles importantes que le gustaria añadir.",
-                        required: true
+                        multilinea: true,
+                        required: false
                     },
                 ]
             },
@@ -53,6 +57,7 @@ export default {
                         id: "txtNombre",
                         type: "Text",
                         name: "Nombre",
+                        autocomplete: "given-name",
                         placeholder: "Nombre del solicitante.",
                         title: "Nombre del solicitante.",
                         required: true
@@ -62,6 +67,7 @@ export default {
                         id: "txtApellido",
                         type: "Text",
                         name: "Apellido",
+                        autocomplete: "family-name",
                         placeholder: "Apellido del solicitante.",
                         title: "Apellido del solicitante.",
                         required: true
@@ -71,6 +77,7 @@ export default {
                         id: "txtCorreo",
                         type: "Email",
                         name: "Correo",
+                        autocomplete: "email",
                         placeholder: "Correo Electronico del solicitante.",
                         title: "Correo Electronico del solicitante.",
                         required: true
@@ -78,8 +85,9 @@ export default {
                     {
                         label: "Telefono",
                         id: "txtTelefono",
-                        type: "Text",
+                        type: "tel",
                         name: "Telefono",
+                        autocomplete: "tel",
                         placeholder: "Numero de telefono del solicitante.",
                         title: "Numero de telefono del solicitante.",
                         required: true

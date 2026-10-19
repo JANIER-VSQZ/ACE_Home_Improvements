@@ -1,11 +1,22 @@
 <main class="career-list">
-    {{#each mesas}}
-        {{>mesaEmpleo2
-            indice=@index
-            plaza=plaza
-            ciudad=ciudad
-            tipoContrato=tipoContrato
-            descripcionPuesto=descripcionPuesto
-        }}
-     {{/each}}
+    <div class="empleos-encabezado">
+        <h1 data-i18n="empleos.titulo">Trabaja con nosotros</h1>
+        <p data-i18n="empleos.introduccion">Selecciona el puesto que te interesa para consultar sus requisitos y completar tu solicitud.</p>
+    </div>
+    <section class="job-card empleo-solicitud">
+        <div class="job-card__info" aria-live="polite">
+            <h2 data-i18n="empleos.detalles">Detalles del puesto</h2>
+            <p data-job-placeholder data-i18n="empleos.indicacion">Elige una vacante en el formulario para ver su ubicación, tipo de contrato y requisitos.</p>
+            {{#each mesas}}
+                {{>mesaEmpleo2
+                    indice=@index
+                    plaza=plaza
+                    ciudad=ciudad
+                    tipoContrato=tipoContrato
+                    descripcionPuesto=descripcionPuesto
+                }}
+            {{/each}}
+        </div>
+        {{>solicitudEmpleo}}
+    </section>
 </main>

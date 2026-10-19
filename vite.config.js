@@ -43,7 +43,11 @@ export default defineConfig(
                 partialDirectory: resolve(__dirname, 'partials'),
                 context: getPageContext
             }),
-            htmlPurge({}),
+            htmlPurge({
+                // Public scripts toggle these classes after the HTML is built.
+                safelist: ['open', 'visible'],
+                dynamicAttributes: ['aria-pressed', 'aria-expanded'],
+            }),
             ViteMinifyPlugin(),
         ]
     }

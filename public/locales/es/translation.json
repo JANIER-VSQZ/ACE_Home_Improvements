@@ -58,7 +58,7 @@
     "labelNombre": "Nombre completo:",
     "labelCorreo": "Correo electrónico:",
     "labelMensaje": "Mensaje:",
-    "boton": "Enviar mensaje",
+    "boton": "Probar formulario",
     "dudas": "¿Tienes dudas? ¡Escríbenos!",
     "numeros": "Números de Contacto",
     "imagen": "Casco de construcción"
@@ -131,16 +131,22 @@
     ]
   },
   "empleos": {
+    "titulo": "Trabaja con nosotros",
+    "introduccion": "Selecciona el puesto que te interesa para consultar sus requisitos y completar tu solicitud.",
+    "detalles": "Detalles del puesto",
+    "indicacion": "Elige una vacante en el formulario para ver su ubicación, tipo de contrato y requisitos.",
+    "formulario": "Solicitud de empleo",
+    "puesto": "Puesto al que deseas aplicar:",
+    "seleccionar": "Selecciona un puesto",
     "ubicacion": "Ubicación:",
     "tipo": "Tipo:",
     "tipoContrato": "Tipo de Contrato:",
     "descripcion": "Descripción:",
     "descripcionPuesto": "Descripción del puesto:",
-    "aplicar": "Aplicar ahora",
+    "aplicar": "Probar solicitud",
     "nombre": "Nombre:",
     "email": "Email:",
     "telefono": "Teléfono:",
-    "enviado": "¡Formulario enviado con éxito!",
     "items": [
       {
         "plaza": "Ingeniero Civil",
@@ -333,12 +339,12 @@
       "Información general del servicio",
       "Información personal"
     ],
-    "enviar": "ENVIAR",
+    "enviar": "Probar formulario",
     "campos": {
       "Dimensiones": {
-        "label": "Area del lugar",
-        "placeholder": "Area superficial.",
-        "title": "El area del lugar donde se realizara el trabajo."
+        "label": "Área aproximada",
+        "placeholder": "Ej. 120.5",
+        "title": "Indica el área aproximada y selecciona la unidad."
       },
       "Condicion": {
         "label": "Condicion Actual",
@@ -346,12 +352,12 @@
         "title": "condicion en la que se encuentra el lugar de trabajo."
       },
       "Ubicacion": {
-        "label": "Ubicacion Exacta",
-        "placeholder": "Ubicacion de la residencia.",
-        "title": "Ubicacion exacta del lugar donde se hara el trabajo."
+        "label": "Ciudad o código postal",
+        "placeholder": "Ciudad o código postal del proyecto.",
+        "title": "Para consultar disponibilidad en tu zona."
       },
       "Observacion": {
-        "label": "Observaciones",
+        "label": "Observaciones (opcional)",
         "placeholder": "Detalles importantes.",
         "title": "Detalles importantes que le gustaria añadir."
       },
@@ -375,14 +381,16 @@
         "placeholder": "Numero de telefono del solicitante.",
         "title": "Numero de telefono del solicitante."
       }
-    }
+    },
+    "unidad": "Unidad del área",
+    "pies": "Pies cuadrados (ft²)",
+    "metros": "Metros cuadrados (m²)"
   },
   "validacion": {
     "requeridos": {
-      "Dimensiones": "Area del lugar no puede quedar vacío.",
+      "Dimensiones": "Indica el área aproximada del trabajo.",
       "Condicion": "Condicion Actual no puede quedar vacío.",
-      "Ubicacion": "Ubicacion Exacta no puede quedar vacío.",
-      "Observacion": "Observaciones no puede quedar vacío.",
+      "Ubicacion": "Indica la ciudad o el código postal.",
       "Nombre": "Nombre no puede quedar vacío.",
       "Apellido": "Apellido no puede quedar vacío.",
       "Correo": "Correo Electronico no puede quedar vacío.",
@@ -394,8 +402,13 @@
     "correoInvalido": "Correo inválido.",
     "telefonoInvalido": "Ingrese un número telefónico válido.",
     "nombreEmpleo": "Por favor, ingrese su nombre.",
+    "puestoEmpleo": "Selecciona el puesto al que deseas aplicar.",
+    "nombreCompletoInvalido": "Ingresa un nombre válido, sin números ni símbolos especiales.",
+    "correoRequeridoEmpleo": "El correo electrónico no puede quedar vacío.",
+    "telefonoRequeridoEmpleo": "El teléfono no puede quedar vacío.",
     "correoEmpleo": "Por favor, ingrese un correo electrónico válido.",
-    "telefonoEmpleo": "El número de teléfono debe tener exactamente 10 dígitos."
+    "telefonoEmpleo": "El número de teléfono debe tener exactamente 10 dígitos.",
+    "areaInvalida": "Ingresa un área mayor que cero, por ejemplo 120.5."
   },
   "galeria": {
     "titulo": "Galería",
@@ -454,5 +467,43 @@
         "testimonio": "“La empresa siempre nos da las herramientas y materiales que necesitamos. Eso facilita mucho el trabajo.”"
       }
     ]
+  },
+  "inicio": {
+    "coberturaBreve": "Proyectos en Estados Unidos · Consulta tu zona",
+    "portafolio": "Nuestro trabajo",
+    "proyectosDescripcion": "Conoce los materiales, acabados y detalles de nuestros proyectos.",
+    "verGaleria": "Explorar la galería",
+    "verProyecto": "Ver el proyecto",
+    "resumenProyectos": [
+      "Tejas asfálticas y una barrera impermeable para proteger la cubierta.",
+      "Revestimiento de madera tratada con un acabado contemporáneo.",
+      "Escaleras de concreto y una vereda que conecta la vivienda con la calle."
+    ],
+    "acompanamiento": "De la idea a la obra",
+    "procesoTitulo": "Cómo trabajamos",
+    "proceso": [
+      {
+        "titulo": "Cuéntanos tu proyecto",
+        "descripcion": "Comparte lo que necesitas y la ubicación del trabajo para consultar disponibilidad."
+      },
+      {
+        "titulo": "Planificamos los detalles",
+        "descripcion": "Coordinamos permisos, materiales y personal según las necesidades del proyecto."
+      },
+      {
+        "titulo": "Supervisamos el trabajo",
+        "descripcion": "Damos seguimiento a la ejecución y mantenemos la comunicación durante el proceso."
+      }
+    ],
+    "conocerEquipo": "Conoce nuestra empresa",
+    "verTestimonios": "Ver todos los testimonios",
+    "coberturaTitulo": "Nuestra cobertura",
+    "contactoTitulo": "Hablemos de tu próximo proyecto",
+    "coberturaDescripcion": "Trabajamos en Estados Unidos. Consulta disponibilidad para tu ubicación y el servicio que necesitas.",
+    "llamar": "Llámanos"
+  },
+  "formularios": {
+    "prueba": "Formulario de prueba: los datos no se enviarán.",
+    "validado": "Validación completada. Esta es una prueba; no se ha enviado ninguna solicitud."
   }
 }

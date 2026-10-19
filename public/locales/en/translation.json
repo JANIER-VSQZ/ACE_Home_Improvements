@@ -58,7 +58,7 @@
     "labelNombre": "Full name:",
     "labelCorreo": "Email address:",
     "labelMensaje": "Message:",
-    "boton": "Send Message",
+    "boton": "Test form",
     "dudas": "Have questions? Write to us!",
     "numeros": "Contact Numbers",
     "imagen": "Construction hard hat"
@@ -131,16 +131,22 @@
     ]
   },
   "empleos": {
+    "titulo": "Work with us",
+    "introduccion": "Select the position you are interested in to review its requirements and complete your application.",
+    "detalles": "Position details",
+    "indicacion": "Choose an opening in the form to see its location, contract type, and requirements.",
+    "formulario": "Job application",
+    "puesto": "Position you want to apply for:",
+    "seleccionar": "Select a position",
     "ubicacion": "Location:",
     "tipo": "Type:",
     "tipoContrato": "Contract Type:",
     "descripcion": "Description:",
     "descripcionPuesto": "Job Description:",
-    "aplicar": "Apply Now",
+    "aplicar": "Test application",
     "nombre": "Name:",
     "email": "Email:",
     "telefono": "Phone:",
-    "enviado": "Form submitted successfully!",
     "items": [
       {
         "plaza": "Civil Engineer",
@@ -333,12 +339,12 @@
       "General service information",
       "Personal information"
     ],
-    "enviar": "SEND",
+    "enviar": "Test form",
     "campos": {
       "Dimensiones": {
-        "label": "Site area",
-        "placeholder": "Surface area.",
-        "title": "The area of the site where the work will be performed."
+        "label": "Approximate area",
+        "placeholder": "E.g. 120.5",
+        "title": "Enter the approximate area and select the unit."
       },
       "Condicion": {
         "label": "Current condition",
@@ -346,12 +352,12 @@
         "title": "The current condition of the work site."
       },
       "Ubicacion": {
-        "label": "Exact location",
-        "placeholder": "Location of the home.",
-        "title": "Exact location of the work site."
+        "label": "City or ZIP code",
+        "placeholder": "Project city or ZIP code.",
+        "title": "To check availability in your area."
       },
       "Observacion": {
-        "label": "Additional notes",
+        "label": "Additional notes (optional)",
         "placeholder": "Important details.",
         "title": "Important details you would like to add."
       },
@@ -375,14 +381,16 @@
         "placeholder": "Applicant's phone number.",
         "title": "Applicant's phone number."
       }
-    }
+    },
+    "unidad": "Area unit",
+    "pies": "Square feet (ft²)",
+    "metros": "Square meters (m²)"
   },
   "validacion": {
     "requeridos": {
-      "Dimensiones": "Site area cannot be empty.",
+      "Dimensiones": "Enter the approximate project area.",
       "Condicion": "Current condition cannot be empty.",
-      "Ubicacion": "Exact location cannot be empty.",
-      "Observacion": "Additional notes cannot be empty.",
+      "Ubicacion": "Enter the city or ZIP code.",
       "Nombre": "First name cannot be empty.",
       "Apellido": "Last name cannot be empty.",
       "Correo": "Email address cannot be empty.",
@@ -394,8 +402,13 @@
     "correoInvalido": "Invalid email address.",
     "telefonoInvalido": "Please enter a valid phone number.",
     "nombreEmpleo": "Please enter your name.",
+    "puestoEmpleo": "Select the position you want to apply for.",
+    "nombreCompletoInvalido": "Enter a valid name without numbers or special symbols.",
+    "correoRequeridoEmpleo": "Email address cannot be empty.",
+    "telefonoRequeridoEmpleo": "Phone cannot be empty.",
     "correoEmpleo": "Please enter a valid email address.",
-    "telefonoEmpleo": "The phone number must contain exactly 10 digits."
+    "telefonoEmpleo": "The phone number must contain exactly 10 digits.",
+    "areaInvalida": "Enter an area greater than zero, for example 120.5."
   },
   "galeria": {
     "titulo": "Gallery",
@@ -454,5 +467,43 @@
         "testimonio": "“The company always gives us the tools and materials we need. That makes the work much easier.”"
       }
     ]
+  },
+  "inicio": {
+    "coberturaBreve": "Projects in the United States · Ask about your area",
+    "portafolio": "Our work",
+    "proyectosDescripcion": "Explore the materials, finishes, and details of our projects.",
+    "verGaleria": "Explore the gallery",
+    "verProyecto": "View project",
+    "resumenProyectos": [
+      "Asphalt shingles and a waterproof barrier to protect the roof.",
+      "Treated wood siding with a contemporary finish.",
+      "Concrete stairs and a walkway connecting the home to the street."
+    ],
+    "acompanamiento": "From idea to construction",
+    "procesoTitulo": "How we work",
+    "proceso": [
+      {
+        "titulo": "Tell us about your project",
+        "descripcion": "Share what you need and the project location to check availability."
+      },
+      {
+        "titulo": "We plan the details",
+        "descripcion": "We coordinate permits, materials, and staff according to the project’s needs."
+      },
+      {
+        "titulo": "We supervise the work",
+        "descripcion": "We oversee the work and stay in touch throughout the process."
+      }
+    ],
+    "conocerEquipo": "Get to know our company",
+    "verTestimonios": "Read all testimonials",
+    "coberturaTitulo": "Our service area",
+    "contactoTitulo": "Let’s talk about your next project",
+    "coberturaDescripcion": "We work in the United States. Contact us to check availability for your location and the service you need.",
+    "llamar": "Call us"
+  },
+  "formularios": {
+    "prueba": "Demo form: your information will not be sent.",
+    "validado": "Validation complete. This is a demo; no request has been sent."
   }
 }

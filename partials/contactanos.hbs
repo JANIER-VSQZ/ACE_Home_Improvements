@@ -2,15 +2,16 @@
   <h2 data-i18n="contacto.titulo">Contáctanos</h2>
   <p class="contact-description" data-i18n="contacto.descripcion">¿Tienes alguna duda o comentario? Completa el formulario y te responderemos pronto.</p>
 
-  <form class="contact-card__form" action="/enviar-contacto" method="POST">
+  <form class="contact-card__form" method="post" data-demo-form>
+    {{>avisoDemo}}
     <div class="form-group">
       <label for="nombre" data-i18n="contacto.labelNombre">Nombre completo:</label>
-      <input type="text" id="nombre" name="nombre" required />
+      <input type="text" id="nombre" name="nombre" autocomplete="name" required />
     </div>
 
     <div class="form-group">
       <label for="correo" data-i18n="contacto.labelCorreo">Correo electrónico:</label>
-      <input type="email" id="correo" name="correo" required />
+      <input type="email" id="correo" name="correo" autocomplete="email" required />
     </div>
 
     <div class="form-group">

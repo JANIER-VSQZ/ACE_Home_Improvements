@@ -16,6 +16,8 @@ function context(page){
     switch(page){
         case "/index.html":
             context = {...context, ...heroData, ...testimoniosMainData, ...cotizacionData};
+            context.proyectosInicio = proyectosDestacadosData.proyectos;
+            context.testimoniosInicio = testimoniosclienteData.testimonios.slice(0, 3);
             break;
         case '/cotizaciones.html':
             context = {...context, ...cotizacionData, ...formularioData};

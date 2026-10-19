@@ -1,10 +1,11 @@
 import { t } from './i18n.js';
+import './formulariosDemo.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('frmCotizacion');
-    const obligatorios = ['Dimensiones', 'Condicion', 'Ubicacion', 'Observacion', 'Nombre', 'Apellido', 'Correo', 'Telefono'];
+    const obligatorios = ['Dimensiones', 'Condicion', 'Ubicacion', 'Nombre', 'Apellido', 'Correo', 'Telefono'];
     const validadores = {
-        Dimensiones: [/^\d+$/, 'soloNumeros'],
+        Dimensiones: [/^\d+(?:[.,]\d+)?$/, 'areaInvalida'],
         Nombre: [/^[A-Za-zÁÉÍÓÚáéíóúÑñ]+( [A-Za-zÁÉÍÓÚáéíóúÑñ]+)?$/, 'nombreInvalido'],
         Apellido: [/^[A-Za-zÁÉÍÓÚáéíóúÑñ]+( [A-Za-zÁÉÍÓÚáéíóúÑñ]+)?$/, 'apellidoInvalido'],
         Correo: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'correoInvalido'],
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let key;
             if (!valor) key = `validacion.requeridos.${nombre}`;
             else if (validador && !validador[0].test(valor)) key = `validacion.${validador[1]}`;
+            else if (nombre === 'Dimensiones' && Number(valor.replace(',', '.')) <= 0) key = 'validacion.areaInvalida';
             if (!key) return;
 
             const mensaje = document.createElement('div');

@@ -1,34 +1,7 @@
-<section class="job-card">
-  <div class="job-card__info">
-    <h2 data-i18n="empleos.items.{{indice}}.plaza">{{plaza}}</h2>
+<div data-job-details="{{indice}}" hidden>
+    <h3 data-i18n="empleos.items.{{indice}}.plaza">{{plaza}}</h3>
     <p><strong data-i18n="empleos.ubicacion">Ubicación:</strong> {{ciudad}}</p>
-    <p><strong data-i18n="empleos.tipoContrato">Tipo de Contrato:</strong> <span data-i18n="empleos.items.{{indice}}.tipoContrato">{{tipoContrato}}</span></p>
+    <p><strong data-i18n="empleos.tipoContrato">Tipo de contrato:</strong> <span data-i18n="empleos.items.{{indice}}.tipoContrato">{{tipoContrato}}</span></p>
     <p><strong data-i18n="empleos.descripcionPuesto">Descripción del puesto:</strong></p>
     <p data-i18n="empleos.items.{{indice}}.descripcionPuesto">{{descripcionPuesto}}</p>
-  </div>
-
-  <form class="job-card__form" id="jobForm-{{indice}}" novalidate>
-  <div class="form-row">
-    <div class="form-group">
-      <label for="name-{{indice}}" data-i18n="empleos.nombre">Nombre:</label>
-      <input type="text" id="name-{{indice}}" name="nombre" required />
-      <small class="error-message" id="name-error-{{indice}}"></small>
-    </div>
-    <div class="form-group">
-      <label for="email-{{indice}}" data-i18n="empleos.email">Email:</label>
-      <input type="email" id="email-{{indice}}" name="email" required />
-      <small class="error-message" id="email-error-{{indice}}"></small>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="phone-{{indice}}" data-i18n="empleos.telefono">Teléfono:</label>
-      <input type="tel" id="phone-{{indice}}" name="telefono" required />
-      <small class="error-message" id="phone-error-{{indice}}"></small>
-    </div>
-  </div>
-
-  <button type="submit" class="apply-btn" data-i18n="empleos.aplicar">Aplicar ahora</button>
-</form>
-</section>
+</div>
