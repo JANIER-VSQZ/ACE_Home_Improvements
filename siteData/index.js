@@ -29,6 +29,12 @@ function context(page){
         case '/mesaEmpleos.html':
             context = {...context, ...datosMesaEmpleos};
             break;
+        case '/galeria.html':
+            context = {...context, ...galeriaData};
+            break;
+        case '/testimonios.html':
+            context = {...context, ...testimoniosclienteData};
+            break;
   
     }
     //console.log("Context: ", JSON.stringify(context, null, 2));

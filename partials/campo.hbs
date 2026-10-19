@@ -1,14 +1,14 @@
 <div class="div{{name}}" id="div{{name}}">
 
     {{#if label}}
-    <label for="{{id}}">{{label}}</label>
+    <label for="{{id}}" data-i18n="cotizaciones.campos.{{name}}.label">{{label}}</label>
     {{/if}}
 
-    <input type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}" title="{{title}}" {{#if
+    <input type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}" title="{{title}}" data-i18n="[placeholder]cotizaciones.campos.{{name}}.placeholder;[title]cotizaciones.campos.{{name}}.title" {{#if
         required}}required{{/if}}>
 
     {{#if boton}}
-    <button type="submit">{{boton}}</button>
+    <button type="submit" data-i18n="cotizaciones.enviar">{{boton}}</button>
     {{/if}}
 
 </div>

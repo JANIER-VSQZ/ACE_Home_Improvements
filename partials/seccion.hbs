@@ -1,6 +1,8 @@
 <div class="seccion-formulario">
 
-    <p>{{descripcionSeccion}}</p>
+    {{#if descripcionSeccion}}
+    <p data-i18n="cotizaciones.secciones.{{@index}}">{{descripcionSeccion}}</p>
+    {{/if}}
 
     {{#each campos}}
         {{> campo this}}

@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <script type="module" src="public/menu.js"></script>
+  <script type="module" src="/menu.js"></script>
   <script type="module" src="js/galeriaScript.js"></script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="stylesheet" href="less/principal.less">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="/i18n.js"></script>
-  <title>Vite App</title>
+  <script type="module" src="./js/i18n.js"></script>
+  <title data-i18n="paginas.galeria">Galería</title>
 </head>
 <body>
   {{>header menu_4="true"}}
   <main>
     <section class="fondo">
   <div class="titulo-galeria">
-    <h1>Galería</h1>
-    <span class="instruccion">
+    <h1 data-i18n="galeria.titulo">Galería</h1>
+    <span class="instruccion" data-i18n="galeria.instruccion">
       Pasa el cursor sobre "Galería" para ver más información
     </span>
-    <p class="descripcion-galeria">
+    <p class="descripcion-galeria" data-i18n="galeria.descripcion">
       En nuestra galería encontrarás ejemplos reales de nuestros trabajos en roofing, siding y acabados exteriores. Cada proyecto refleja la calidad y precisión que nos caracteriza, desde la colocación de tejas resistentes hasta revestimientos duraderos que embellecen fachadas. Además, ofrecemos veredas y escaleras exteriores como servicios independientes, para conectar de forma segura y armoniosa tu vivienda con su entorno. Explora nuestras soluciones y descubre cómo podemos transformar cada detalle en un espacio funcional y estético.
     </p>
   </div>
   <div class="botones-galeria">
-    <p>Click en el boton para ir a: </p>
-    <button type="button" id="btnGaleria">Galeria Imagenes
+    <p data-i18n="galeria.irA">Haz clic en el botón para ir a:</p>
+    <button type="button" id="btnGaleria" data-i18n="galeria.imagenes">Galeria Imagenes
     </button>
-    <button type="button" id="btnHerramientas">Galeria Herramientas</button>
+    <button type="button" id="btnHerramientas" data-i18n="galeria.herramientas">Galeria Herramientas</button>
   </div>
   {{>galeria trabajos}}
   {{>galeria herramientas}}

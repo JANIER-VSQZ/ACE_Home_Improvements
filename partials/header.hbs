@@ -2,10 +2,10 @@
     <nav class="navegacion">
         <div class="encabezado">
             <a href="index.html" class="logo-link">
-                <img src="/images/logo_ace.png" alt="Logo" title="Ir a Inicio">
-                <h1 title="Ir a Inicio">ACE <br>Home Improvement</h1>
+                <img src="/images/logo_ace.png" alt="Logo de ACE Home Improvement" title="Ir a Inicio" data-i18n="[alt]menu.logo;[title]menu.inicio">
+                <h1 title="Ir a Inicio" data-i18n="[title]menu.inicio">ACE <br>Home Improvement</h1>
             </a>
-            <button class="menu-toggle">☰</button>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" data-i18n="[aria-label]menu.abrir">☰</button>
         </div>
 
         <ul class="menu">
@@ -15,8 +15,8 @@
             <!-- <li {{#if menu_4}}class="selected" {{/if}}><a href="galeria.html" data-i18n="menu.galeria">Galería</a></li> -->
             <!-- <li {{#if menu_5}}class="selected" {{/if}}><a href="testimonios.html" data-i18n="menu.testimonios">Testimonios</a></li> -->
             <li {{#if menu_6}}class="selected" {{/if}}><a href="mesaEmpleos.html" data-i18n="menu.empleos">Mesa de Empleos</a></li>
-            <li><button onclick="setLang('es')">ES</button></li>
-            <li><button onclick="setLang('en')">EN</button></li>
+            <li><button type="button" data-language="es" lang="es" aria-label="Español">ES</button></li>
+            <li><button type="button" data-language="en" lang="en" aria-label="English">EN</button></li>
 
             <!-- Menu desplegable de más -->
             <li class="dropdown">

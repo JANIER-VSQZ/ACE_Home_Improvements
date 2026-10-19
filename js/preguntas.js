@@ -1,51 +1,58 @@
-import { preguntasFrecuentes } from '../siteData/pages/faqData.js';
+import { ready, t } from './i18n.js';
 
 const contenedor = document.getElementById('faq-lista');
 const buscador = document.getElementById('buscador');
 
-// muestra preguntas filtradas
-function renderPreguntas(filtradas = preguntasFrecuentes) {
-  contenedor.innerHTML = ''; // Limpia contenido actual
+function renderPreguntas() {
+    const preguntas = t('preguntasFrecuentes', { returnObjects: true });
+    const texto = buscador.value.trim().toLocaleLowerCase();
+    const abiertas = new Set([...contenedor.querySelectorAll('[aria-expanded="true"]')]
+        .map((button) => button.dataset.index));
+    contenedor.replaceChildren();
 
-  filtradas.forEach((item, index) => {
-    const pregunta = document.createElement('div');
-    pregunta.classList.add('faq-item');
+    preguntas.forEach((item, index) => {
+        if (!item.pregunta.toLocaleLowerCase().includes(texto)) return;
+        const pregunta = document.createElement('div');
+        pregunta.className = 'faq-item';
+        const encabezado = document.createElement('button');
+        encabezado.type = 'button';
+        encabezado.className = 'faq-pregunta';
+        encabezado.dataset.index = index;
+        encabezado.setAttribute('aria-controls', `faq-respuesta-${index}`);
+        const abierto = abiertas.has(String(index));
+        encabezado.setAttribute('aria-expanded', String(abierto));
 
-    // simbolo como boton para desplegar
-    const encabezado = document.createElement('button');
-    encabezado.classList.add('faq-pregunta');
-    encabezado.setAttribute('data-index', index);
-    encabezado.setAttribute('data-i18n', `preguntasFrecuentes.${index}.pregunta`);
-    encabezado.innerHTML = `<span class="triangulo">▶</span> ${item.pregunta}`;
+        const triangulo = document.createElement('span');
+        triangulo.className = 'triangulo';
+        triangulo.setAttribute('aria-hidden', 'true');
+        triangulo.textContent = abierto ? '▼' : '▶';
+        encabezado.append(triangulo, ` ${item.pregunta}`);
 
-    const respuesta = document.createElement('div');
-    respuesta.classList.add('faq-respuesta');
-    respuesta.setAttribute('data-i18n', `preguntasFrecuentes.${index}.respuesta`);
-    respuesta.innerText = item.respuesta;
-    respuesta.style.display = 'none';
+        const respuesta = document.createElement('div');
+        respuesta.id = `faq-respuesta-${index}`;
+        respuesta.className = 'faq-respuesta';
+        respuesta.textContent = item.respuesta;
+        respuesta.style.display = abierto ? 'block' : 'none';
 
-    // cambio de simbolo para desplegar 
-    encabezado.addEventListener('click', () => {
-      const abierto = respuesta.style.display === 'block';
-      respuesta.style.display = abierto ? 'none' : 'block';
-      const tri = encabezado.querySelector('.triangulo');
-      tri.textContent = abierto ? '▶' : '▼';
+        encabezado.addEventListener('click', () => {
+            const expandir = encabezado.getAttribute('aria-expanded') !== 'true';
+            encabezado.setAttribute('aria-expanded', String(expandir));
+            respuesta.style.display = expandir ? 'block' : 'none';
+            triangulo.textContent = expandir ? '▼' : '▶';
+        });
+        pregunta.append(encabezado, respuesta);
+        contenedor.appendChild(pregunta);
     });
 
-    pregunta.appendChild(encabezado);
-    pregunta.appendChild(respuesta);
-    contenedor.appendChild(pregunta);
-  });
+    if (!contenedor.childElementCount) {
+        const mensaje = document.createElement('p');
+        mensaje.textContent = t('faq.sinResultados');
+        contenedor.appendChild(mensaje);
+    }
 }
 
-// busqueda
-buscador.addEventListener('input', (e) => {
-  const texto = e.target.value.toLowerCase();
-  const filtradas = preguntasFrecuentes.filter(p =>
-    p.pregunta.toLowerCase().includes(texto)
-  );
-  renderPreguntas(filtradas);
+ready.then(() => {
+    buscador.addEventListener('input', renderPreguntas);
+    document.addEventListener('languageChanged', renderPreguntas);
+    renderPreguntas();
 });
-
-// muestra todas las preguntas
-renderPreguntas();

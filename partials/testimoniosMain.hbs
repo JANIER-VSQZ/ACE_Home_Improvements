@@ -1,7 +1,8 @@
 <section id="testimonios" class="testimonial-grid">
-    <h2>Testimonios de nuestro equipo</h2>
+    <h2 data-i18n="testimonios.equipo">Testimonios de nuestro equipo</h2>
     {{#each testimonioData}}
         {{>testimonioMain
+            indice=@index
             imagen=imagen
             testimonio=testimonio
             nombre=nombre

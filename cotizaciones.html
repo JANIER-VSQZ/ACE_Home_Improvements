@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="less/principal.less">
     <script type="module" src="/menu.js"></script>
     <script type="module" src="js/cotizaciones.js"></script>
-    <script type="module" src="/i18n.js"></script>
-    <title>Cotizaciones</title>
+    <script type="module" src="./js/i18n.js"></script>
+    <title data-i18n="paginas.cotizaciones">Cotizaciones</title>
 </head>
 
 <body>
@@ -15,15 +15,15 @@
     <main>
         <section class="cotizaciones">
             <div class="mensaje-encabezado">
-                <h1>Cotizaciones</h1>
-                <p>Transforma tu hogar con soluciones confiables y especializadas.
+                <h1 data-i18n="cotizaciones.titulo">Cotizaciones</h1>
+                <p data-i18n="cotizaciones.descripcion">Transforma tu hogar con soluciones confiables y especializadas.
                     Cotiza hoy sin compromiso y recibe atención personalizada en techos, siding, concreto y más.
                 </p>
             </div>
-            <h2>Detalles</h2>
+            <h2 data-i18n="cotizaciones.detalles">Detalles</h2>
             <section class="fondo-formulario">
                 <section class="contenedor-formulario" id="contenedor-formulario">
-                    <p>
+                    <p data-i18n="cotizaciones.instrucciones">
                         Por favor llene el siguiente formulario:
                     </p>
                     {{>formulario formCotizacion}}

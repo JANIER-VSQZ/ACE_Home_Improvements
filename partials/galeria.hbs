@@ -2,6 +2,8 @@
 <section class="galeria" id="{{this.nombrePag}}">
     {{#each imagenData}}
     {{>imagen
+        grupo=../nombrePag
+        indice=@index
         imgLink=imgLink
         titulo=titulo
     }}

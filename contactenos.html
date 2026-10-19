@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="less/principal.less" />
     <script type="module" src="/menu.js"></script>
-    <script type="module" src="/i18n.js"></script>
-    <title>Contáctanos</title>
+    <script type="module" src="./js/i18n.js"></script>
+    <title data-i18n="paginas.contacto">Contáctanos</title>
 </head>
 
 <body>
@@ -16,15 +16,15 @@
     <main class="contacto-main">
         <section class="contacto-contenedor">
             <div class="imagen-contacto">
-                <img src="/images/casco.jpg" alt="Imagen de la constructora" />
+                <img src="/images/casco.jpg" alt="Casco de construcción" data-i18n="[alt]contacto.imagen" />
             </div>
 
             <div class="formulario-contacto">
-                <h2>¿Tienes dudas? ¡Escríbenos!</h2>
+                <h2 data-i18n="contacto.dudas">¿Tienes dudas? ¡Escríbenos!</h2>
                 {{> contactanos }}
 
                 <div class="contacto-numeros">
-                    <h3>Números de Contacto</h3>
+                    <h3 data-i18n="contacto.numeros">Números de Contacto</h3>
                     <ul>
                         <li>201-951-3723</li>
                         <li>973-288-4024</li>

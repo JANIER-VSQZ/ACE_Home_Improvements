@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="less/principal.less">
   <script type="module" src="/menu.js"></script>
   <script type="module" src="/hero.js"></script>
-  <script type="module" src="/i18n.js"></script>
-  <title>Página Principal</title>
+  <script type="module" src="./js/i18n.js"></script>
+  <title data-i18n="paginas.inicio">Página Principal</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 
   <main>
     {{>hero heroData=heroData}}
-    <h2>Nuestros Servicios:</h2>
+    <h2 data-i18n="comun.nuestrosServicios">Nuestros Servicios:</h2>
     {{>cotizacionServicios servicioData=cotizacionServicios}}
   </main>
 

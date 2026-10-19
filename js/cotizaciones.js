@@ -1,145 +1,48 @@
+import { t } from './i18n.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-    const selected = new Set();
-    let hayBtnSeleccionado = false;
+    const formulario = document.getElementById('frmCotizacion');
+    const obligatorios = ['Dimensiones', 'Condicion', 'Ubicacion', 'Observacion', 'Nombre', 'Apellido', 'Correo', 'Telefono'];
+    const validadores = {
+        Dimensiones: [/^\d+$/, 'soloNumeros'],
+        Nombre: [/^[A-Za-zÁÉÍÓÚáéíóúÑñ]+( [A-Za-zÁÉÍÓÚáéíóúÑñ]+)?$/, 'nombreInvalido'],
+        Apellido: [/^[A-Za-zÁÉÍÓÚáéíóúÑñ]+( [A-Za-zÁÉÍÓÚáéíóúÑñ]+)?$/, 'apellidoInvalido'],
+        Correo: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'correoInvalido'],
+        Telefono: [/^\+?[0-9\s().-]{7,20}$/, 'telefonoInvalido'],
+    };
 
-    const frmCotizacion = document.getElementById("frmCotizacion");
-    const contenedorFrm = document.getElementById("contenedor-formulario");
+    formulario.addEventListener('submit', (event) => {
+        formulario.querySelectorAll('[data-validation-error]').forEach((error) => error.remove());
+        let primerError;
 
-    const txtUbicacion = document.getElementById("txtUbicacion");
-    const txtDimensiones = document.getElementById("txtDimensiones");
-    const txtCondicion = document.getElementById("txtCondicion");
-    const txtNombre = document.getElementById("txtNombre");
-    const txtApellido = document.getElementById("txtApellido");
-    const txtCorreo = document.getElementById("txtCorreo");
-    const txtTelefono=document.getElementById("txtTelefono");
+        obligatorios.forEach((nombre) => {
+            const campo = formulario.elements.namedItem(nombre);
+            campo.classList.remove('error');
+            campo.removeAttribute('aria-invalid');
+            campo.removeAttribute('aria-describedby');
+            const valor = campo.value.trim();
+            const validador = validadores[nombre];
+            let key;
+            if (!valor) key = `validacion.requeridos.${nombre}`;
+            else if (validador && !validador[0].test(valor)) key = `validacion.${validador[1]}`;
+            if (!key) return;
 
-
-    //validaciones formulario
-    const camposObligatorios = [
-        {
-            campo: txtDimensiones, nombre: "Dimensiones"
-        },
-        {
-            campo: txtCondicion, nombre: "Condicion"
-        },
-        {
-            campo: txtUbicacion, nombre: "Ubicacion"
-        },
-        {
-            campo: txtNombre, nombre: "Nombre"
-        },
-
-        {
-            campo: txtApellido, nombre: "Apellido"
-        },
-
-        {
-            campo: txtCorreo, nombre: "Correo"
-        },
-
-        {
-            campo: txtTelefono, nombre: "Telefono"
-        }
-    ];
-
-    let hayErrores = false;
-    const error = {};
-
-    function quitarErrores() {
-        camposObligatorios.forEach(item => item.campo.classList.remove("error"));
-    }
-
-    function validarVacios() {
-        const regexVacio = /^\s*$/;
-
-        camposObligatorios.forEach(item => {
-            if (regexVacio.test(item.campo.value)) {
-                error[item.nombre] = `${item.nombre} no puede quedar vacio`;
-                console.log(error);
-                hayErrores = true;
-            }
-        })
-    }
-
-    function validarDatos() {
-        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const regexNumero = /^\d+$/;
-        const regexNombreApellido = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+( [A-Za-zÁÉÍÓÚáéíóúÑñ]+)?$/;
-        const regexTelefono=/^\+?[0-9\s().-]{7,20}$/;
-        if (!("Dimensiones" in error) && !regexNumero.test(txtDimensiones.value)) {
-            error["Dimensiones"] = "Solo ingrese numeros";
-            hayErrores = true;
-        }
-
-        if (!("Nombre" in error) && !regexNombreApellido.test(txtNombre.value)) {
-            error["Nombre"] = "Nombre invalido"
-            hayErrores = true;
-        }
-
-        if (!("Apellido" in error) && !regexNombreApellido.test(txtApellido.value)) {
-            error["Apellido"] = "Apellido invalido";
-            hayErrores = true;
-        }
-
-        if (!("Correo" in error) && !regexEmail.test(txtCorreo.value)) {
-            error["Correo"] = "Correo invalido.";
-            hayErrores = true;
-        }
-
-        if (!("Telefono" in error) && !regexTelefono.test(txtTelefono.value)){
-            error["Telefono"]="Ingrese un numero telefonico valido";
-            hayErrores=true;
-        }
-    }
-
-    function validacionFormulario(e) {
-        hayErrores = false;
-        Object.keys(error).forEach(key => delete error[key]);
-        quitarErrores();
-
-        const errorContainers = document.querySelectorAll('[class^="div"]');
-        errorContainers.forEach(container => {
-            const existingErrorMessage = container.querySelector(".error");
-            if (existingErrorMessage) {
-                container.removeChild(existingErrorMessage);
-            }
+            const mensaje = document.createElement('div');
+            mensaje.id = `${nombre}Error`;
+            mensaje.className = 'error';
+            mensaje.dataset.validationError = '';
+            mensaje.dataset.i18n = key;
+            mensaje.textContent = t(key);
+            campo.parentElement.appendChild(mensaje);
+            campo.classList.add('error');
+            campo.setAttribute('aria-invalid', 'true');
+            campo.setAttribute('aria-describedby', mensaje.id);
+            primerError ||= campo;
         });
 
-        validarVacios();
-        validarDatos();
-
-        if (hayErrores) {
-            const errorKeys = Object.keys(error);
-            let focusAssigned = false;
-            for (let errorKey of errorKeys) {
-                const errorDivHolder = document.getElementById(`div${errorKey}`);
-                console.log(errorDivHolder);
-                if (errorDivHolder) {
-                    let errorDivMessage = document.getElementById(`${errorKey}Error`);
-                    if (errorDivMessage) {
-                        errorDivMessage.textContent = error[errorKey];
-                    } else {
-                        errorDivMessage = document.createElement("DIV");
-                        errorDivMessage.textContent = error[errorKey];
-                        errorDivMessage.classList.add('error');
-                        errorDivHolder.appendChild(errorDivMessage);
-                    }
-                    let inputObject = errorDivHolder.querySelector('input');
-                    inputObject.classList.add('error');
-                    if (!focusAssigned) {
-                        inputObject.focus();
-                        focusAssigned = true;
-                    }
-                    console.log(errorDivMessage);
-                }
-
-            }
-
-            e.preventDefault();
-            e.stopPropagation();
+        if (primerError) {
+            event.preventDefault();
+            primerError.focus();
         }
-
-    }
-
-    frmCotizacion.addEventListener('submit', validacionFormulario);
+    });
 });
