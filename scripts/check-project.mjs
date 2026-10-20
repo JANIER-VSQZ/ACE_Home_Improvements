@@ -40,6 +40,10 @@ for (const page of pages) {
   if (page.descriptionKey) translate(page.descriptionKey);
   for (const form of Object.values(context.forms)) {
     translate(form.submitKey);
+    translate(form.subjectKey);
+    const endpoint = new URL(form.endpoint);
+    assert.equal(endpoint.origin, 'https://formsubmit.co', 'Unknown form provider');
+    assert(endpoint.pathname.startsWith('/ajax/'), 'Expected a FormSubmit AJAX endpoint');
     for (const section of form.sections) {
       if (section.titleKey) translate(section.titleKey);
       for (const field of section.fields) {

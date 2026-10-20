@@ -7,6 +7,7 @@ import { readFile, writeFile, mkdir, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { resolve, join, extname, sep } from 'node:path';
 import { pages } from '../src/data/site.js';
+import formDelivery from '../src/data/form-delivery.json' with { type: 'json' };
 
 process.chdir(resolve(import.meta.dirname, '..'));
 const candidates = process.platform === 'win32' ? [
@@ -72,6 +73,9 @@ try {
   let nextId = 0;
   const pending = new Map();
   const exceptions = [];
+  const deliveries = [];
+  let deliveryMode = 'success';
+  let heldDelivery;
   socket.addEventListener('message', ({ data }) => {
     const message = JSON.parse(data);
     if (message.id) {
@@ -82,6 +86,18 @@ try {
       if (message.error) handler.reject(new Error(JSON.stringify(message.error)));
       else handler.done(message.result);
     } else if (message.method === 'Runtime.exceptionThrown') exceptions.push(message.params);
+    else if (message.method === 'Fetch.requestPaused') {
+      const request = message.params;
+      if (request.request.method !== 'OPTIONS') {
+        deliveries.push({
+          url: request.request.url,
+          method: request.request.method,
+          payload: JSON.parse(request.request.postData),
+        });
+      }
+      if (deliveryMode === 'pending' && request.request.method !== 'OPTIONS') heldDelivery = request;
+      else respondToDelivery(request, deliveryMode).catch(error => exceptions.push({ message: error.message }));
+    }
   });
   function send(method, params = {}, sessionId) {
     return new Promise((done, reject) => {
@@ -94,8 +110,29 @@ try {
   const { targetId } = await send('Target.createTarget', { url: 'about:blank' });
   const { sessionId } = await send('Target.attachToTarget', { targetId, flatten: true });
   const command = (method, params) => send(method, params, sessionId);
+  function respondToDelivery(request, mode) {
+    if (mode === 'network' && request.request.method !== 'OPTIONS') {
+      return command('Fetch.failRequest', { requestId: request.requestId, errorReason: 'ConnectionFailed' });
+    }
+    const body = mode === 'activation'
+      ? { success: 'false', message: 'This form needs Activation.' }
+      : { success: mode === 'rejected' ? 'false' : 'true' };
+    return command('Fetch.fulfillRequest', {
+      requestId: request.requestId,
+      responseCode: request.request.method === 'OPTIONS' ? 204 : mode === 'error' ? 503 : 200,
+      responseHeaders: [
+        { name: 'Content-Type', value: 'application/json' },
+        { name: 'Access-Control-Allow-Origin', value: origin },
+        { name: 'Access-Control-Allow-Methods', value: 'POST, OPTIONS' },
+        { name: 'Access-Control-Allow-Headers', value: 'Content-Type, Accept' },
+      ],
+      body: request.request.method === 'OPTIONS' ? '' : Buffer.from(JSON.stringify(body)).toString('base64'),
+    });
+  }
   await command('Page.enable');
   await command('Runtime.enable');
+  // Fulfill every provider request locally, including preflights. Never send test emails.
+  await command('Fetch.enable', { patterns: [{ urlPattern: 'https://formsubmit.co/*', requestStage: 'Request' }] });
   async function evaluate(expression) {
     const result = await command('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true });
     assert(!result.exceptionDetails, JSON.stringify(result.exceptionDetails));
@@ -173,17 +210,48 @@ try {
   await evaluate("document.querySelector('[data-language=\"es\"]').click()");
   await until("document.getElementById('nameError').textContent.includes('nombre válido')");
   await fill({ name: 'Ana María', email: 'ana@example.com', phone: '2019513723' });
+  assert.equal(deliveries.length, 0, 'Invalid fields must prevent submission');
+  deliveryMode = 'pending';
   await submit('jobForm');
-  assert.equal(await evaluate("document.querySelector('[data-demo-status]').hidden"), false);
+  await until("document.getElementById('jobForm').getAttribute('aria-busy') === 'true'");
+  assert.equal(await evaluate("document.querySelector('button[type=\"submit\"]').disabled"), true);
+  assert.equal(await evaluate("document.querySelector('fieldset').disabled"), true);
+  await evaluate("document.getElementById('jobForm').dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }))");
+  const deliveryDeadline = Date.now() + 15000;
+  while (!heldDelivery && Date.now() < deliveryDeadline) await new Promise(done => setTimeout(done, 25));
+  assert(heldDelivery, 'The form did not reach the intercepted email endpoint');
+  assert.equal(deliveries.length, 1, 'A pending submission must not be duplicated');
+  await evaluate("document.querySelector('[data-language=\"en\"]').click()");
+  await until("document.querySelector('button[type=\"submit\"]').textContent === 'Sending…'");
+  deliveryMode = 'success';
+  await respondToDelivery(heldDelivery, deliveryMode);
+  heldDelivery = undefined;
+  await until("document.querySelector('[data-form-status]').dataset.state === 'success'");
+  assert.equal(deliveries[0].url, formDelivery.endpoint);
+  assert.equal(deliveries[0].method, 'POST');
+  assert.equal(deliveries[0].payload.email, 'ana@example.com');
+  assert.equal(deliveries[0].payload[locales.es.empleos.puesto], locales.es.empleos.items[14].plaza);
+  assert.equal(deliveries[0].payload._subject, locales.es.formularios.asuntos.empleo);
   assert.equal(await evaluate("document.querySelectorAll('[data-validation-error]').length"), 0);
+  assert.equal(await evaluate("document.getElementById('name').value"), '');
+  assert.equal(await evaluate("document.getElementById('puesto').value"), '');
+  assert.equal(await evaluate("document.querySelectorAll('[data-job-details]:not([hidden])').length"), 0);
+  assert.equal(await evaluate("document.querySelector('button[type=\"submit\"]').disabled"), false);
+  assert.equal(await evaluate("document.querySelector('[data-form-status]').textContent"), locales.en.formularios.enviado);
 
   await navigate('cotizaciones.html', 'en', '&boton=Siding');
   assert.equal(await evaluate("document.getElementById('txtObservacion').required"), false);
-  await fill({ txtDimensiones: '120,5', txtCondicion: 'Good', txtUbicacion: '07024', txtNombre: 'Ana', txtApellido: 'Lopez', txtCorreo: 'ana@example.com', txtTelefono: '+1 (201) 951-3723' });
+  const quoteValues = { txtDimensiones: '120,5', txtCondicion: 'Good', txtUbicacion: '07024', txtNombre: 'Ana', txtApellido: 'Lopez', txtCorreo: 'ana@example.com', txtTelefono: '+1 (201) 951-3723' };
+  await fill(quoteValues);
   await submit('frmCotizacion');
-  assert.equal(await evaluate("document.querySelector('[data-demo-status]').hidden"), false);
-  await fill({ txtDimensiones: '0' });
+  await until("document.querySelector('[data-form-status]').dataset.state === 'success'");
+  assert.equal(deliveries.length, 2);
+  assert.equal(deliveries[1].payload._subject, locales.en.formularios.asuntos.cotizacion);
+  assert.equal(deliveries[1].payload['Requested service'], 'Siding');
+  assert.equal(deliveries[1].payload[locales.en.cotizaciones.campos.Dimensiones.label], '120,5');
+  await fill({ ...quoteValues, txtDimensiones: '0' });
   await submit('frmCotizacion');
+  assert.equal(deliveries.length, 2, 'An invalid quote must not be sent');
   assert.equal(await evaluate("document.querySelectorAll('[data-validation-error]').length"), 1);
   await evaluate("document.querySelector('[data-language=\"es\"]').click()");
   await until("document.getElementById('txtDimensionesError').textContent.includes('mayor que cero')");
@@ -194,8 +262,27 @@ try {
   await submit('contactForm');
   assert.equal(await evaluate("document.querySelectorAll('[data-validation-error]').length"), 3);
   await fill({ nombre: 'Ana María', correo: 'ana@example.com', mensaje: 'Test message' });
+  for (const mode of ['error', 'rejected', 'network', 'activation']) {
+    deliveryMode = mode;
+    await submit('contactForm');
+    await until("document.querySelector('[data-form-status]').dataset.state === 'error'");
+    assert.equal(await evaluate("document.getElementById('mensaje').value"), 'Test message');
+    assert.equal(await evaluate("document.getElementById('correo').value"), 'ana@example.com');
+    assert.equal(await evaluate("document.querySelector('button[type=\"submit\"]').disabled"), false);
+    assert.equal(await evaluate("document.querySelector('[data-form-status]').getAttribute('role')"), 'alert');
+    assert.equal(await evaluate("getComputedStyle(document.querySelector('[data-form-status]')).color"), 'rgb(180, 35, 24)');
+    const key = mode === 'activation' ? 'activacion' : 'error';
+    assert.equal(await evaluate("document.querySelector('[data-form-status]').textContent"), locales.en.formularios[key]);
+  }
+  deliveryMode = 'success';
   await submit('contactForm');
-  assert.equal(await evaluate("document.querySelector('[data-demo-status]').hidden"), false);
+  await until("document.querySelector('[data-form-status]').dataset.state === 'success'");
+  assert.equal(deliveries.at(-1).payload._subject, locales.en.formularios.asuntos.contacto);
+  assert.equal(deliveries.at(-1).payload[locales.en.contacto.labelMensaje], 'Test message');
+  assert.equal(await evaluate("document.getElementById('mensaje').value"), '');
+  assert.equal(deliveries.length, 7);
+  assert(deliveries.every(request => request.url === formDelivery.endpoint && request.method === 'POST'));
+  console.log('PASS simulated email delivery, request payloads, duplicate prevention, activation, failure recovery and successful resets.');
 
   await navigate('galeria.html', 'en');
   await evaluate("document.querySelector('[data-gallery-tab=\"tools\"]').click()");
@@ -248,7 +335,7 @@ try {
   }
   console.log('PASS alternating service reveals, repeated project reveals, reduced motion and both three-second carousels.');
 
-  assert.equal(requests.filter(request => request.method !== 'GET').length, 0, 'Demo forms sent a request');
+  assert.equal(requests.filter(request => request.method !== 'GET').length, 0, 'A form posted to the static site instead of the email provider');
   assert.deepEqual(missingResources, [], 'Missing local resources');
   assert.deepEqual(exceptions, [], 'Browser exceptions');
 
@@ -265,7 +352,7 @@ try {
     await writeFile('.artifacts/' + name + '.png', Buffer.from(screenshot.data, 'base64'));
   }
   console.log('PASS menus, all three forms, localization of errors, job selection, gallery tabs, FAQ filtering and service links.');
-  console.log('PASS zero submissions, missing local resources or browser exceptions. Screenshots: .artifacts/');
+  console.log('PASS no real emails, missing local resources or browser exceptions. Screenshots: .artifacts/');
 } finally {
   socket?.close();
   browser.kill();

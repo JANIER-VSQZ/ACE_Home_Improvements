@@ -27,7 +27,7 @@ export default defineConfig({
     }),
     htmlPurge({
       safelist: ['is-open', 'is-active', 'is-invalid', 'is-leaving', 'scroll-reveal', 'scroll-reveal--left', 'is-reveal-visible'],
-      dynamicAttributes: ['aria-pressed', 'aria-expanded', 'aria-selected'],
+      dynamicAttributes: ['aria-pressed', 'aria-expanded', 'aria-selected', 'data-state'],
     }),
     ViteMinifyPlugin(),
   ],

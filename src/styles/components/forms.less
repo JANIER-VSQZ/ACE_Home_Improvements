@@ -69,6 +69,21 @@
   background: #e8f5ed;
   color: @color-success;
 }
+.form__status[data-state="sending"] {
+  background: #edf4f7;
+  color: #23485c;
+}
+.form__status[data-state="error"] {
+  background: #fef3f2;
+  color: @color-error;
+}
+.form__honeypot {
+  display: none;
+}
 .form > .button {
   align-self: flex-start;
+}
+.form > .button:disabled {
+  cursor: wait;
+  opacity: .65;
 }

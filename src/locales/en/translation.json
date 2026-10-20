@@ -54,7 +54,7 @@
     "labelNombre": "Full name:",
     "labelCorreo": "Email address:",
     "labelMensaje": "Message:",
-    "boton": "Test form",
+    "boton": "Send message",
     "dudas": "Have questions? Write to us!",
     "numeros": "Contact Numbers",
     "imagen": "Construction hard hat"
@@ -139,7 +139,7 @@
     "tipoContrato": "Contract Type:",
     "descripcion": "Description:",
     "descripcionPuesto": "Job Description:",
-    "aplicar": "Test application",
+    "aplicar": "Submit application",
     "nombre": "Name:",
     "email": "Email:",
     "telefono": "Phone:",
@@ -293,7 +293,7 @@
       "General service information",
       "Personal information"
     ],
-    "enviar": "Test form",
+    "enviar": "Request a quote",
     "campos": {
       "Dimensiones": {
         "label": "Approximate area",
@@ -460,7 +460,19 @@
     "llamar": "Call us"
   },
   "formularios": {
-    "prueba": "Demo form: your information will not be sent.",
-    "validado": "Validation complete. This is a demo; no request has been sent."
+    "aviso": "We will send your information to process your request.",
+    "enviando": "Sending…",
+    "enviado": "Your request has been sent successfully. Thank you for contacting us.",
+    "error": "Your request could not be sent. Your details are still in the form; please try again in a few minutes.",
+    "tiempoAgotado": "The service took too long to respond. We did not receive confirmation of your submission. Your details are still in the form.",
+    "activacion": "The submission service is not available yet. Please try again later.",
+    "sinJavaScript": "Enable JavaScript to submit the form.",
+    "servicio": "Requested service",
+    "idioma": "Form language",
+    "asuntos": {
+      "cotizacion": "ACE Home Improvement: new quote request",
+      "empleo": "ACE Home Improvement: new job application",
+      "contacto": "ACE Home Improvement: new contact message"
+    }
   }
 }

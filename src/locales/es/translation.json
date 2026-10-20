@@ -54,7 +54,7 @@
     "labelNombre": "Nombre completo:",
     "labelCorreo": "Correo electrónico:",
     "labelMensaje": "Mensaje:",
-    "boton": "Probar formulario",
+    "boton": "Enviar mensaje",
     "dudas": "¿Tienes dudas? ¡Escríbenos!",
     "numeros": "Números de Contacto",
     "imagen": "Casco de construcción"
@@ -139,7 +139,7 @@
     "tipoContrato": "Tipo de Contrato:",
     "descripcion": "Descripción:",
     "descripcionPuesto": "Descripción del puesto:",
-    "aplicar": "Probar solicitud",
+    "aplicar": "Enviar solicitud",
     "nombre": "Nombre:",
     "email": "Email:",
     "telefono": "Teléfono:",
@@ -293,7 +293,7 @@
       "Información general del servicio",
       "Información personal"
     ],
-    "enviar": "Probar formulario",
+    "enviar": "Solicitar cotización",
     "campos": {
       "Dimensiones": {
         "label": "Área aproximada",
@@ -460,7 +460,19 @@
     "llamar": "Llámanos"
   },
   "formularios": {
-    "prueba": "Formulario de prueba: los datos no se enviarán.",
-    "validado": "Validación completada. Esta es una prueba; no se ha enviado ninguna solicitud."
+    "aviso": "Enviaremos tu información para atender tu solicitud.",
+    "enviando": "Enviando…",
+    "enviado": "Tu solicitud se ha enviado correctamente. Gracias por contactarnos.",
+    "error": "No se pudo enviar la solicitud. Tus datos siguen en el formulario; inténtalo de nuevo en unos minutos.",
+    "tiempoAgotado": "El servicio tardó demasiado en responder. No recibimos confirmación del envío. Tus datos siguen en el formulario.",
+    "activacion": "El servicio de envío aún no está disponible. Por favor, vuelve a intentarlo más tarde.",
+    "sinJavaScript": "Activa JavaScript para enviar el formulario.",
+    "servicio": "Servicio solicitado",
+    "idioma": "Idioma del formulario",
+    "asuntos": {
+      "cotizacion": "ACE Home Improvement: nueva solicitud de cotización",
+      "empleo": "ACE Home Improvement: nueva solicitud de empleo",
+      "contacto": "ACE Home Improvement: nuevo mensaje de contacto"
+    }
   }
 }

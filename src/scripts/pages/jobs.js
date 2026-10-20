@@ -11,5 +11,6 @@ export function initJobs() {
     placeholder.hidden = select.value !== '';
   }
   select.addEventListener('change', showPosition);
+  select.form.addEventListener('reset', () => queueMicrotask(showPosition));
   showPosition();
 }

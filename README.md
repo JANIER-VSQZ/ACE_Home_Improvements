@@ -1,6 +1,6 @@
 # ACE Home Improvement
 
-Sitio de diez páginas con Vite, Handlebars, Less e i18next. Las URL públicas se conservan. Los formularios funcionan como demostración: validan los datos localmente y nunca envían solicitudes.
+Sitio de diez páginas con Vite, Handlebars, Less e i18next. Las URL públicas se conservan. Los formularios validan los datos y los envían por correo mediante FormSubmit, compatible con GitHub Pages.
 
 ## Desarrollo
 
@@ -25,19 +25,20 @@ src/
     site.js                 Registro de páginas, navegación y contexto de compilación
     assets.json             Imágenes y datos que no cambian con el idioma
     forms.json              Campos, secciones y opciones de formularios
+    form-delivery.json      Endpoint público para el envío de los tres formularios
   locales/
     es/translation.json     Contenido en español y texto inicial del HTML
     en/translation.json     Contenido en inglés
   partials/
     layouts/                Documento, head, cabecera y pie compartidos
     components/             Tarjetas, navegación y encabezados reutilizables
-    forms/                  Formulario, campo y aviso de demostración
+    forms/                  Formulario, campo y estado de envío
     pages/                  Composición de cada una de las diez páginas
   scripts/
     main.js                 Única entrada del navegador
     core/                   Inicialización y actualización del idioma
     components/             Navegación y carruseles
-    forms/                  Reglas, mensajes y validación compartida
+    forms/                  Reglas, validación y envío compartido
     pages/                  Comportamiento específico de cada página
   styles/
     main.less               Orden único de importación
@@ -48,10 +49,10 @@ src/
 public/images/              Imágenes estáticas
 scripts/check-project.mjs   Comprobación de referencias y traducciones
 scripts/check-browser.mjs   Pruebas de integración en navegador
-tests/                      Pruebas de reglas de validación
+tests/                      Pruebas de validación y transporte de formularios
 ```
 
-La prueba de navegador necesita Chrome, Edge o Chromium. Si no está en una ubicación habitual, define `BROWSER_PATH` con la ruta del ejecutable. Comprueba las diez páginas en ambos idiomas, anchos de 320 a 1440 píxeles, navegación, formularios y contenido dinámico. Guarda capturas en `.artifacts/`, que no se versiona.
+La prueba de navegador necesita Chrome, Edge o Chromium. Si no está en una ubicación habitual, define `BROWSER_PATH` con la ruta del ejecutable. Comprueba las diez páginas en ambos idiomas, anchos de 320 a 1440 píxeles, navegación, formularios y contenido dinámico. Intercepta las solicitudes a FormSubmit para simular respuestas: las pruebas automáticas no envían correos. Guarda capturas en `.artifacts/`, que no se versiona.
 
 ## Convenciones
 
@@ -95,7 +96,20 @@ La estructura se configura en `src/data/forms.json`. Todos utilizan `forms/form.
 
 Los mensajes se traducen, aparecen debajo del campo, se enlazan mediante `aria-describedby` y el primer error recibe el foco. Solo hay un formulario de empleo; un selector muestra los detalles del puesto elegido. Observaciones en cotizaciones es opcional.
 
-Para implementar envíos reales en el futuro, sustituye el controlador de demostración en `src/scripts/forms/index.js` por una integración con un servidor. Nunca incluyas credenciales en el código del navegador.
+El destino de contacto, cotizaciones y empleo se configura una sola vez en `src/data/form-delivery.json`. Está preparado para `vasquezjanier31@gmail.com` mediante `https://formsubmit.co/ajax/vasquezjanier31@gmail.com`. No se necesitan contraseñas ni claves privadas. El endpoint es público.
+
+`src/scripts/forms/submission.js` prepara los campos con sus etiquetas traducidas, el puesto y la unidad seleccionados, el servicio solicitado en una cotización y el correo del remitente para poder responder. Cada tipo de solicitud tiene un asunto distinto. El controlador muestra el progreso, bloquea envíos simultáneos y solo limpia el formulario si FormSubmit confirma que aceptó la solicitud. Ante un error conserva los datos. No reintenta automáticamente un envío que agota el tiempo de espera, porque podría haberse recibido.
+
+### Activar la recepción
+
+1. Publica los cambios en GitHub Pages o abre el sitio con `npm run dev` o `npm run preview`.
+2. Completa y envía un formulario con datos de prueba.
+3. Revisa `vasquezjanier31@gmail.com`, incluida la carpeta de spam, y confirma el enlace **Activate Form** enviado por FormSubmit. Activa los formularios que el proveedor solicite; puede volver a pedirlo al cambiar de página o dominio.
+4. Vuelve a enviar una prueba y comprueba que llega con los datos y el asunto correspondientes.
+
+Antes de la activación, el proveedor puede pedir confirmar el correo en vez de entregar el mensaje. La aplicación comprueba tanto el estado HTTP como el resultado de la respuesta; no considera correcto un envío rechazado. La recepción final en Gmail requiere esta activación y comprobar el buzón.
+
+Los envíos manuales desde desarrollo también son reales. Para comprobar el comportamiento sin correos, utiliza `npm test` y, después de compilar, `npm run test:browser`. [Documentación de FormSubmit](https://formsubmit.co/documentation) y [activación y ayuda](https://formsubmit.co/help).
 
 ## Efectos y animaciones
 

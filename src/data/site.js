@@ -1,5 +1,6 @@
 import assets from './assets.json' with { type: 'json' };
 import forms from './forms.json' with { type: 'json' };
+import formDelivery from './form-delivery.json' with { type: 'json' };
 import spanish from '../locales/es/translation.json' with { type: 'json' };
 
 export const pages = [
@@ -69,6 +70,8 @@ export default function getPageContext(pathname) {
     heroImages: assets.hero,
     services, projects, testimonials, jobs, gallery,
     featuredTestimonials: testimonials.slice(0, 3),
-    forms,
+    forms: Object.fromEntries(Object.entries(forms).map(([type, form]) => [
+      type, { ...form, endpoint: formDelivery.endpoint },
+    ])),
   };
 }

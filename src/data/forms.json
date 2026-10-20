@@ -3,6 +3,7 @@
     "id": "frmCotizacion",
     "type": "quotes",
     "submitKey": "cotizaciones.enviar",
+    "subjectKey": "formularios.asuntos.cotizacion",
     "sections": [
       {
         "titleKey": "cotizaciones.secciones.0",
@@ -123,6 +124,7 @@
     "id": "jobForm",
     "type": "jobs",
     "submitKey": "empleos.aplicar",
+    "subjectKey": "formularios.asuntos.empleo",
     "sections": [
       {
         "fields": [
@@ -231,6 +233,7 @@
     "id": "contactForm",
     "type": "contact",
     "submitKey": "contacto.boton",
+    "subjectKey": "formularios.asuntos.contacto",
     "sections": [
       {
         "fields": [
